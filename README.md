@@ -1,21 +1,22 @@
 ## Personal Website 
 
 ### Overview:
-This is a personal website built using React, Bootstrap, Node.js, Express.js, and CSS. Key features include a theme toggle, contact function, and newsletter subscription form using the Mailchimp API. Backend endpoints are developed using Node.js and Express.js to handle submitted form data and subscription requests.
+This is a personal website built using React, Bootstrap, Node.js, Express.js, and CSS. Key features include a theme toggle, weather API, contact function, and newsletter subscription form using the Mailchimp API. Backend endpoints are developed using Node.js and Express.js to handle submitted form data and subscription requests.
+
 
 ### Sections:
-- Navigation Bar: Allows users to navigate to different sections of the website, and links to my linkedin, github, and email. Also allow user to toggle between light and dark themes.
-- Banner: Displays my information, including a short bio and links to my resume.
+- Navigation Bar: Allows users to navigate to different sections of the website, switch toggle theme, view current weather, and links to my LinkedIn, GitHub, and E-mail. 
+- About: Displays my information, including a short bio and links to my resume.
 - Skills: Lists my skills in web development.
 - Project: Displays some of my projects with images, descriptions and skills I used.
 - Contact: Allows users to send messages via email to contact and hire me.
-- Newsletter: Encourages visitors to subscribe news from me.
-- Footer: Includes social media links and an email subscription form.
+- Newsletter: Encourages visitors to subscribe to news from me.
+- Footer: Includes social media links and an email link.
 
 ### Technologies Stack:
 - Frontend: React, Bootstrap, CSS
 - Backend: Node.js, Express.js
-- Other: React Router, Nodemailer, Mailchimp
+- Other: React Router, Nodemailer, Mailchimp, API
 
 ### Usage:
 1. Install Dependencies: Run the following command in the project folder to install the required dependencies:

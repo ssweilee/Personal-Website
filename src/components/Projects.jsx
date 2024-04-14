@@ -1,8 +1,6 @@
 import { useState, useContext } from "react"
 import { ThemeContext } from '../App'
 import { Container, Row, Col } from "react-bootstrap"
-import 'animate.css';
-import TrackVisibility from 'react-on-screen'
 import ProjectCard from './ProjectCard'
 import projImg1W from '../assets/img/project-img1-w.png'
 import projImg1B from '../assets/img/project-img1-b.png'
@@ -58,7 +56,7 @@ function Projects () {
         },
         {
             title:"Personal Website",
-            description: "Built a personal website using React, Bootstrap, Node.js, Express.js, and CSS, showcasing technical skills. Features include theme toggle, carousel, contact form and Mailchimp API integrating for newsletter subscription. Backend endpoints handle form data and subscription requests.",
+            description: "Built a personal website using React, Bootstrap, Node.js, Express.js, and CSS, showcasing technical skills. Features include theme toggle, weather API, contact form and Mailchimp API integrating for newsletter subscription. Backend endpoints handle form data and subscription requests.",
             liveSiteLink: "",
             liveSite: "LIVE SITE",
             gitHubLink: "",
@@ -85,7 +83,7 @@ function Projects () {
         },
         {
             title:"Personal Website",
-            description: "Built a personal website using React, Bootstrap, Node.js, Express.js, and CSS, showcasing technical skills. Features include theme toggle, carousel, contact form and Mailchimp API integrating for newsletter subscription. Backend endpoints handle form data and subscription requests.",
+            description: "Built a personal website using React, Bootstrap, Node.js, Express.js, and CSS, showcasing technical skills. Features include theme toggle, weather API, contact form and Mailchimp API integrating for newsletter subscription. Backend endpoints handle form data and subscription requests.",
             liveSiteLink: "https://ssweilee.github.io/Personal-Website/",
             liveSite: "LIVE SITE",
             gitHubLink: "https://github.com/ssweilee/Personal-Website",
@@ -118,9 +116,6 @@ function Projects () {
             <Container>
                 <Row>
                     <Col size={12}>
-                    <TrackVisibility>
-                    {({ isVisible }) =>
-                        <div className={isVisible ? "animate__animated animate__fadeInUp animate__slower" : ""}>
                         <div>
                             <h2>Projects</h2>
                             <p className="text">Click the project to see more information.</p>
@@ -148,8 +143,6 @@ function Projects () {
 
                                 )}
                         </div>        
-                        </div>}
-                    </TrackVisibility>
                     </Col>
                 </Row>
             </Container>

@@ -5,6 +5,7 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../App'
 import ReactSwitch from 'react-switch'
+import Weather from './Weather'
 import { HashLink } from 'react-router-hash-link'
 import {
   BrowserRouter as Router
@@ -15,6 +16,7 @@ function NavBar() {
     const [scrolled, setScrolled] = useState(false)
     const {toggleTheme, theme} = useContext(ThemeContext)
     const [menuExpanded, setMenuExpanded] = useState(false)
+    const [scrollDisabled, setScrollDisables] = useState(false)
     
     useEffect(() => {
       const onScroll = () => {
@@ -29,6 +31,17 @@ function NavBar() {
 
       return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  useEffect(() => {
+    if(menuExpanded) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return() => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [menuExpanded])
 
     const onUpdateActiveLink = (value) => {
         setActiveLink(value)
@@ -50,21 +63,24 @@ function NavBar() {
               <Nav.Link href="#about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
               <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-                <div className="switch">
+            </Nav>
+            <div className="navbar-tools">
+              <Weather />
+              <div className="switch">
                   <ReactSwitch className="custom-switch" onChange={toggleTheme} checked={theme === "dark"} uncheckedIcon={<FontAwesomeIcon className="moon-icon" icon={faMoon} />} checkedIcon={<FontAwesomeIcon className="sun-icon" icon={faSun} />} />
                 </div>
-            </Nav>
-            <span className='navbar-text'>
-              <div className='social-icons'>
-                <a href="www.linkedin.com/in/tzu-wei-lee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
-                <a href='mailto:tzuweilee.20@gmail.com' target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
-                <a href="https://github.com/ssweilee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
               </div>
-              <HashLink to='#connect'>
-                <button><span>Let&apos;s Connect</span></button>
-              </HashLink>
-            </span>
           </Navbar.Collapse>
+          <span className='navbar-text'>
+            <div className='social-icons'>
+              <a href="www.linkedin.com/in/tzu-wei-lee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
+              <a href='mailto:tzuweilee.20@gmail.com' target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
+              <a href="https://github.com/ssweilee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
+            </div>
+            <HashLink to='#connect'>
+              <button><span>Let&apos;s Connect</span></button>
+            </HashLink>
+          </span>
         </Container>
       </Navbar>
     </Router>
