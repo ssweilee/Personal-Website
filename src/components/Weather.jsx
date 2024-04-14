@@ -1,18 +1,11 @@
 import { useState, useEffect } from "react"
 
-
 function Weather () {
     const [weatherData, setWeatherData] = useState(null)
     const [error, setError] = useState(null)
 
     useEffect(() => {
-    const option = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json' }}
-        
-
-        fetch('http://api.weatherapi.com/v1/current.json?key=3720cee632e4426e89254728242602&q=auto:ip', {mode: 'cors'})
+        fetch('http://localhost:3000/weather')
         .then(response => response.json())
         .then(data => {
             setWeatherData(data)
