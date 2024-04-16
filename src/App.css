@@ -386,11 +386,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   margin-top: 6px;
   font-size: 15px;
 }
-.weather {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .weather img {
   width: 60%;
 }
@@ -466,7 +461,8 @@ span .navbar-text {
 	position: absolute;
 }
 nav.navbar .navbar-toggler:active,
-nav.navbar .navbar-toggler:focus {
+nav.navbar .navbar-toggler:focus,
+button.navbar-toggler.collapsed {
 	outline: none;
   box-shadow: none;
 }
@@ -475,8 +471,6 @@ nav.navbar .navbar-toggler-icon {
   height: 17px;
   background-image: none;
   position: relative;
-  transition: all 100ms linear;
-  top: -2px;
   text-decoration: none;
 }
 nav.navbar .navbar-toggler-icon:after,
@@ -488,23 +482,24 @@ nav.navbar .navbar-toggler-icon::before {
 	left: 0;
 	content: '';
 	z-index: 2;
-	transition: all 100ms linear;
 }
 nav.navbar .navbar-toggler-icon:after {
 	top: 8px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
 	transform: rotate(45deg);
-	height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 	transform: translateY(8px) rotate(-45deg);
-	height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent !important;
   position: absolute;
   top: 40px;
+}
+.navbar-toggler {
+  padding: 0 !important;
+  border: transparent !important;
 }
 
 @media (max-width: 767px) {
@@ -525,17 +520,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0;
-    margin: 0;
     gap: 20px;
-  }
-  .social-icons {
-    margin: 0;
-  }
-  .navbar-text button {
-    font-size: 20px;
-    padding: 18px 28px;
-    margin: 0;
   }
 }
 

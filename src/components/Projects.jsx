@@ -47,7 +47,7 @@ function Projects () {
         },
         {
             title:"Etch-A-Sketch",
-            description: "Developed an online drawing tool with features include color selection, rainbow mode, eraser mode, and grid size adjustment. Built using HTML, CSS, and JavaScript with CSS animations enhancing for visual effects.",
+            description: "Developed an online drawing tool with features including color selection, rainbow mode, eraser mode, and grid size adjustment. Built using HTML, CSS, and JavaScript with CSS animations enhancing for visual effects.",
             liveSiteLink: "https://ssweilee.github.io/Etch-A-Sketch/",
             liveSite: "LIVE SITE",
             gitHubLink: "https://github.com/ssweilee/Etch-A-Sketch",
@@ -74,7 +74,7 @@ function Projects () {
         },
         {
             title:"Etch-A-Sketch",
-            description: "Developed an online drawing tool with features include color selection, rainbow mode, eraser mode, and grid size adjustment. Built using HTML, CSS, and JavaScript with CSS animations enhancing for visual effects.",
+            description: "Developed an online drawing tool with features including color selection, rainbow mode, eraser mode, and grid size adjustment. Built using HTML, CSS, and JavaScript with CSS animations enhancing for visual effects.",
             liveSiteLink: "https://ssweilee.github.io/Etch-A-Sketch/",
             liveSite: "LIVE SITE",
             gitHubLink: "https://github.com/ssweilee/Etch-A-Sketch",

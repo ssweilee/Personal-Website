@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faSun, faMoon, faBullseye } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../App'
 import ReactSwitch from 'react-switch'
 import Weather from './Weather'
@@ -16,32 +16,24 @@ function NavBar() {
     const [scrolled, setScrolled] = useState(false)
     const {toggleTheme, theme} = useContext(ThemeContext)
     const [menuExpanded, setMenuExpanded] = useState(false)
-    const [scrollDisabled, setScrollDisables] = useState(false)
     
     useEffect(() => {
-      const onScroll = () => {
-        if (window.scrollY > 50) {
-            setScrolled(true)
-        } else {
-            setScrolled(false)
-        }
+      const handleScroll = () => {
+            setScrolled(window.scrollY > 50)
       }
   
-      window.addEventListener("scroll", onScroll)
+      window.addEventListener("scroll", handleScroll)
 
-      return () => window.removeEventListener("scroll", onScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
     if(menuExpanded) {
-      document.body.style.overflow = 'hidden'
+      document.body.classList.add = 'no-scroll'
     } else {
-      document.body.style.overflow = 'auto'
+      document.body.classList.remove = 'no-scroll'
     }
-    return() => {
-      document.body.style.overflow = 'auto'
-    }
-  }, [menuExpanded])
+    }, [menuExpanded])
 
     const onUpdateActiveLink = (value) => {
         setActiveLink(value)
@@ -51,9 +43,11 @@ function NavBar() {
       setMenuExpanded(!menuExpanded)
     }
 
+    const navbarClass = `${scrolled ? "scrolled" : ""}${theme === "dark" ? "dark" : "light"}`
+
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar expand="md" className={navbarClass}>
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={menuExpanded} onClick={toggleMenu}>
             <span className='navbar-toggler-icon'></span> 
@@ -88,5 +82,3 @@ function NavBar() {
 }
 
 export default NavBar
-
-
