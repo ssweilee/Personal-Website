@@ -11,7 +11,7 @@ function Footer () {
                 <Row size={12} className="align-item-center text-center text-sm-end">
                     <MailchimpForm />
                     <div className="social-icons">
-                        <a href="www.linkedin.com/in/tzu-wei-lee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
+                        <a href="https://www.linkedin.com/in/tzu-wei-lee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
                         <a href='mailto:tzuweilee.20@gmail.com' target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
                         <a href="https://github.com/ssweilee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
                     </div>

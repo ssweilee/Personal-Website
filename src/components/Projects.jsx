@@ -57,9 +57,9 @@ function Projects () {
         {
             title:"Personal Website",
             description: "Built a personal website using React, Bootstrap, Node.js, Express.js, and CSS, showcasing technical skills. Features include theme toggle, weather API, contact form and Mailchimp API integrating for newsletter subscription. Backend endpoints handle form data and subscription requests.",
-            liveSiteLink: "",
+            liveSiteLink: "https://ssweilee.github.io/Personal-Website/",
             liveSite: "LIVE SITE",
-            gitHubLink: "",
+            gitHubLink: "https://github.com/ssweilee/Personal-Website",
             gitHub: "GITHUB",
             imgUrl: theme === "dark" ? projImg1W : projImg1B,
         },
