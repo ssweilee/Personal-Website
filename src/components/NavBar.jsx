@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faSun, faMoon, faBullseye } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../App'
 import ReactSwitch from 'react-switch'
 import Weather from './Weather'

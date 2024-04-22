@@ -82,8 +82,8 @@ p.danger {
 }
 #dark nav.navbar,
 #dark #basic-navbar-nav.show.navbar-collapse.collapse,
-#dark .banner,
-#dark .banner button, 
+#dark .about,
+#dark .about button, 
 #dark .project,
 #dark .contact,
 #dark .contact h2,
@@ -134,7 +134,7 @@ p.danger {
 #dark nav.navbar .navbar-toggler-icon:focus {
   border-bottom: 2px solid #fff;
 }
-#dark .banner .tagline {
+#dark .about .tagline {
   background: linear-gradient(90.21deg, rgba(255, 255, 255, 0.8) -5.91%, rgba(255, 255, 255, 0.95) 50.7%, rgba(255, 255, 255, 0.8) 111.58%);
   border: 1px solid rgba(255, 255, 255, 0.5); 
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); 
@@ -146,13 +146,13 @@ p.danger {
   background: #151515;
   box-shadow: 0px 2px 10px rgba(123, 121, 121, 0.3); 
 }
-#dark .banner p,
+#dark .about p,
 #dark .footer p {
   color: #B8B8B8;
 }
 #dark nav.navbar .navbar-nav .nav-link.navbar-link,
-#dark .banner button,
-#dark .banner .scroll-down svg,
+#dark .about button,
+#dark .about .scroll-down svg,
 #dark .skill h2,
 #dark .skill p,
 #dark .skill-div .skill-icon,
@@ -210,8 +210,8 @@ p.danger {
 
 #light nav.navbar,
 #light #basic-navbar-nav.show.navbar-collapse.collapse,
-#light .banner,
-#light .banner button, 
+#light .about,
+#light .about button, 
 #light .project,
 #light .contact,
 #light .contact h2,
@@ -261,7 +261,7 @@ p.danger {
 #light nav.navbar .navbar-toggler-icon:focus {
   border-bottom: 2px solid #121212;
 }
-#light .banner .tagline {
+#light .about .tagline {
   background: linear-gradient(90.21deg, rgba(0, 0, 0, 0.8) -5.91%, rgba(0, 0, 0, 0.95) 50.7%, rgba(0, 0, 0, 0.8) 111.58%);
   border: 1px solid rgba(0, 0, 0, 0.5); 
   text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7); 
@@ -274,7 +274,7 @@ p.danger {
   background: #f0f0f0 ;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); 
 }
-#light .banner p,
+#light .about p,
 #light .skill p,
 #light .project p,
 #light .contact form input::placeholder, 
@@ -284,8 +284,8 @@ p.danger {
 }
 #light nav.navbar .navbar-nav .nav-link.navbar-link,
 #light .social-icons a svg,
-#light .banner button,
-#light .banner .scroll-down svg,
+#light .about button,
+#light .about .scroll-down svg,
 #light .skill h2,
 #light .skill-div .skill-icon,
 #light .proj-txtx,
@@ -524,12 +524,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-/* Banner Css */
-.banner {
+/* About Css */
+.about {
   margin-top: 0;
   padding: 200px 0 150px 0;
 }
-.banner .tagline {
+.about .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
@@ -537,7 +537,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 16px;
   display: inline-block;
 }
-.banner h1 {
+.about h1 {
   font-size: 65px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -545,7 +545,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 20px;
   display: block;
 }
-.banner p {
+.about p {
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -553,15 +553,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 25px;
   margin-top: 20px;
 }
-.banner .links {
+.about .links {
   display: flex;
   flex-direction: row;
   gap: 55px;
 }
-.banner a {
+.about a {
   text-decoration: none;
 }
-.banner button {
+.about button {
   font-weight: 700;
   font-size: 20px;
   margin-top: 40px;
@@ -570,22 +570,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   align-items: center;
   height: 0px;
 }
-.banner button svg {
+.about button svg {
   font-size: 25px;
   margin-left: 8px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
-.banner button:hover svg {
+.about button:hover svg {
   margin-left: 25px;
 }
-.banner .align-items-center .scroll-down {
+.about .align-items-center .scroll-down {
   font-size: 28px;
   display: flex;
   justify-content: center;
   margin-top: 5px;
 }
-.banner .scroll-down svg {
+.about .scroll-down svg {
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -601,7 +601,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 @media (max-width: 767px) {
-  .banner {
+  .about {
     padding-top: 160px;
   }
 }

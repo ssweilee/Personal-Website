@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-function Banner() {
+function About() {
     const [ isDeleting, setIsDeleting ] = useState(false)
     const [ text, setText ] = useState('')
     const [ delta, setDelta ] = useState(300 - Math.random() * 100)
@@ -47,7 +47,7 @@ function Banner() {
 
     return (
         <Router>
-            <section className="banner" id="about">
+            <section className="about" id="about">
                 <Container>
                     <Row className="align-items-center">
                         <Col xs={12} md={8} xl={7}>
@@ -76,4 +76,4 @@ function Banner() {
     )
 }
 
-export default Banner
+export default About
