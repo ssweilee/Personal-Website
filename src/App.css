@@ -523,6 +523,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     gap: 20px;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .navbar-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 10px;
+  }
+  .navbar-text button span {
+    white-space: nowrap;
+  }
+}
 
 /* About Css */
 .about {
@@ -894,6 +912,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   line-height: 1.2em;
   margin: 0px;
+  text-align: center;
 }
 .new-email-bx {
   padding: 5px;
@@ -948,6 +967,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+.footer .alert-success,
+.footer .alert-primary,
+.footer .alert-danger {
+  background-color: unset;
+  border-color: unset;
+  border: unset;
+  color: unset;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.footer .alert-success {
+  color: green;
+}
+.footer .alert-danger {
+  color: red;
+}
 @media (max-width: 767px) {
   .newsletter-bx {
     flex-direction: column;
@@ -989,11 +1024,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-  .newsletter-bx {
-    display: flex;
-    flex-direction: column;
-  }
   .newsletter-content {
     margin-bottom: 30px;
   }
+  .newsletter-bx div.row {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
 }

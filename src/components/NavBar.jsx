@@ -5,7 +5,7 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../App'
 import ReactSwitch from 'react-switch'
-import Weather from './Weather'
+//import Weather from './Weather'
 import { HashLink } from 'react-router-hash-link'
 import {
   BrowserRouter as Router
@@ -59,7 +59,7 @@ function NavBar() {
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
             </Nav>
             <div className="navbar-tools">
-              <Weather />
+              {/*<Weather />*/}
               <div className="switch">
                   <ReactSwitch className="custom-switch" onChange={toggleTheme} checked={theme === "dark"} uncheckedIcon={<FontAwesomeIcon className="moon-icon" icon={faMoon} />} checkedIcon={<FontAwesomeIcon className="sun-icon" icon={faSun} />} />
                 </div>
@@ -67,9 +67,9 @@ function NavBar() {
           </Navbar.Collapse>
           <span className='navbar-text'>
             <div className='social-icons'>
-              <a href="https://www.linkedin.com/in/tzu-wei-lee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
+              <a href="" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
               <a href='mailto:tzuweilee.20@gmail.com' target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
-              <a href="https://github.com/ssweilee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
+              <a href="" target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
             </div>
             <HashLink to='#connect'>
               <button><span>Let&apos;s Connect</span></button>

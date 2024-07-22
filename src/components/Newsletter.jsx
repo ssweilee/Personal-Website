@@ -40,12 +40,12 @@ function Newsletter ({ status, message, onValidated }) {
             <div className="newsletter">
                 <div className="newsletter-bx">
                     <Row>
-                        <Col lg={12} md={6} xl={5}> 
+                        <Col> 
                         <div className="newsletter-content">
-                            <h3>Subscribe to my Newsletter & Never miss latest updates</h3>   
+                            <h3>Subscribe to my Newsletter</h3>   
                         </div>
                         </Col>
-                        <Col lg={12} md={6} xl={7}>
+                        <Col>
                             <form onSubmit={handleSubmit}>
                                 <div className="new-email-bx">
                                     <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" aria-label="Email Address" />

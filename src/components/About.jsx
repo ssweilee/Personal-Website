@@ -57,7 +57,7 @@ function About() {
                             <h3><span className="txt-rotate" data-period="1000" data-rotate='[ "Web Developer", "Digital Marketer", "Advertising Planner" ]'><span className="wrap">{text}</span></span></h3>
                             <p>With 5+ years of experience in the Ad Tech industry and processing strong teamwork and project management skills, I am deeply passionate about the impact power of technology.<br /><br />Currently transitioning to a career as a web developer. I am excited to leverage my skills and expertise in new ways.<br /><br />I am actively seeking opportunities that align with my expertise and interests.</p>
                             <div className="links">
-                                <a href="https://drive.google.com/file/d/1a66GEeCskwOcpigCTU_F-45bIWhHJwbz/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><button>Get Resume<ArrowDownCircle size={25} /></button></a>
+                                <a href="" target="_blank" rel="noopener noreferrer"><button>Get Resume<ArrowDownCircle size={25} /></button></a>
                                 <HashLink to="#connect">
                                     <button className="connect" onClick={() => console.log('connect')}>Let&apos;s connect <ArrowRightCircle size={25} /></button>
                                 </HashLink>
