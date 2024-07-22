@@ -27,7 +27,7 @@ function Contact() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         setButtonText("Sending...");
         try {
             let response = await fetch("http://localhost:5050/contact", {
