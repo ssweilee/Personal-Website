@@ -11,10 +11,10 @@ import {
 function About() {
     const [ isDeleting, setIsDeleting ] = useState(false)
     const [ text, setText ] = useState('')
-    const [ delta, setDelta ] = useState(300 - Math.random() * 100)
+    const [ delta, setDelta ] = useState(100 - Math.random() * 100)
     const [ index, setIndex ] = useState(0);
-    const toRotate = [ "Web Developer", "Digital Marketer", "Advertising Planner" ]
-    const period = 2000
+    const toRotate = [ "Web Developer", "Student at UoB", "Advertising Strategist" ]
+    const period = 1500
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -32,7 +32,7 @@ function About() {
         setText(updatedText)
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 2)
+            setDelta(prevDelta => prevDelta / 3)
         }
 
         if (!isDeleting && updatedText === fullText) {
@@ -41,7 +41,7 @@ function About() {
         } else if(isDeleting && updatedText === '') {
             setIsDeleting(false)
             setIndex(prevIndex => prevIndex + 1);
-            setDelta(500)
+            setDelta(100)
         } 
     }
 
@@ -50,12 +50,12 @@ function About() {
             <section className="about" id="about">
                 <Container>
                     <Row className="align-items-center">
-                        <Col xs={12} md={8} xl={7}>
+                        <Col xs={12} md={10} xl={8}>
                             <span className="tagline">Welcome to my Personal Website</span>
                             <h3>Hi! I&apos;m</h3>
-                            <h1><span>Tzu Wei Lee</span></h1>
-                            <h3><span className="txt-rotate" data-period="1000" data-rotate='[ "Web Developer", "Digital Marketer", "Advertising Planner" ]'><span className="wrap">{text}</span></span></h3>
-                            <p>With 5+ years of experience in the Ad Tech industry and processing strong teamwork and project management skills, I am deeply passionate about the impact power of technology.<br /><br />Currently transitioning to a career as a web developer. I am excited to leverage my skills and expertise in new ways.<br /><br />I am actively seeking opportunities that align with my expertise and interests.</p>
+                            <h1><span>Tzu Wei(Sandy) Lee</span></h1>
+                            <h3><span className="txt-rotate" data-period="1000" data-rotate='[ "Web Developer", "Student at UoB", "Advertising Strategist" ]'><span className="wrap">{text}</span></span></h3>
+                            <p>I am a web developer with a passion for problem-solving and innovation, currently pursuing a Master’s degree in Computer Science at the University of Bristol.<br></br><br></br>I am currently learning C, Java, and computer architecture.</p>
                             <div className="links">
                                 <a href="" target="_blank" rel="noopener noreferrer"><button>Get Resume<ArrowDownCircle size={25} /></button></a>
                                 <HashLink to="#connect">

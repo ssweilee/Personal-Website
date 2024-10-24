@@ -763,18 +763,43 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-decoration: none;
   text-decoration: underline;
 }
-.project-slider {
+/*.project-slider .react-multi-carousel-item {
   width: 100%;
   margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: center;
-}
+  align-items: center;
+}*/
 .proj-imgbx {
   width: 400px;
 }
 .project-slider .proj-imgbx img {
   width: 100%;
+}
+.projects .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+@media (max-width: 767px) {
+  .projects {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .projects {
+    flex-direction: row;
+  }
 }
 
 /* Contact Css */
@@ -895,6 +920,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   align-items: center;
   width: 100%;
   margin: 0;
+  flex-direction: column;
 }
 .newsletter-bx {
   width: 100%;
@@ -1022,7 +1048,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin-top: 20px;
   }
 }
-
 @media (min-width: 768px) and (max-width: 1200px) {
   .newsletter-content {
     margin-bottom: 30px;

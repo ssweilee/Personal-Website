@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 function ProjectCard ({ title, liveSiteLink, liveSite, gitHubLink, gitHub, imgUrl, onClick }) {
     return (
-      <Col size={102} sm={6} md={4}>
+      <Col>
         <div className="proj-imgbx" onClick={onClick}>
           <img src={imgUrl} />
           <div className="proj-txtx">
