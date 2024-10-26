@@ -4,9 +4,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import ProjectCard from './ProjectCard'
 import projImg1W from '../assets/img/project-img1-w.png'
 import projImg1B from '../assets/img/project-img1-b.png'
-//import projImg2 from '../assets/img/project-img2.png'
 import projImg3 from '../assets/img/project-img3.png'
-//import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCss3Alt, faFontAwesome, faHtml5, faJs, faMailchimp, faNode, faReact } from '@fortawesome/free-brands-svg-icons'
@@ -24,9 +22,6 @@ function Projects () {
             case "Personal Website" :
                 setIcons([faHtml5, faCss3Alt, faJs, faReact, faNode, faMailchimp, faFontAwesome]);
                 break;
-            //case "Calculator":
-                //setIcons([faHtml5, faCss3Alt, faJs]);
-                //break;
             case "Etch-A-Sketch":
                 setIcons([faHtml5, faCss3Alt, faJs, faFontAwesome]);
                 break;

@@ -804,7 +804,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* Contact Css */
 .contact {
-  padding: 60px 0 200px 0;
+  padding: 60px 0 0 0;
 }
 .contact .align-items-center{
   margin: 0;
@@ -915,6 +915,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: cover;
   background-repeat: no-repeat;
 }
+/*
 .newsletter-bx div.row {
   display: flex;
   align-items: center;
@@ -984,6 +985,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   border-radius: 18px;
 }
+*/
 .footer .social-icon {
   width: 40%;
 }
@@ -1010,6 +1012,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: red;
 }
 @media (max-width: 767px) {
+  /*
   .newsletter-bx {
     flex-direction: column;
     padding: 50px 20px;
@@ -1039,6 +1042,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .new-email-bx button {
     z-index: 2;
   }
+    */
   .footer .text-center .social-icons,
   .footer .text-center span {
     display: flex;
@@ -1048,6 +1052,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin-top: 20px;
   }
 }
+/*
 @media (min-width: 768px) and (max-width: 1200px) {
   .newsletter-content {
     margin-bottom: 30px;
@@ -1059,3 +1064,4 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 
 }
+  */

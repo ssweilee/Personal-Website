@@ -6,7 +6,7 @@ import cors from 'cors';
 dotenv.config();
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT_3000 || 3000;
 const apikey = process.env.WEATHER_API_KEY;
 
 app.get('/weather', async (req, res) => {
