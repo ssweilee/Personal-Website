@@ -6,9 +6,7 @@ import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
-const apiBaseUrl = process.env.NODE_ENV === 'development' 
-  ? 'http://localhost:5050/api'     // Local environment
-  : 'https://personal-website-lyart-mu.vercel.app/api/contact';  // Vercel deployment
+const apiBaseUrl = process.env.API_BASE_URL || 'http://localhost:5050/api';
 
 function Contact() {
     const formInitialDetails = {

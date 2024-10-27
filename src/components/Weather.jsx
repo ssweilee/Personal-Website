@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react"
 
-const apiBaseUrl = process.env.NODE_ENV === 'development' 
-  ? 'http://localhost:3000/api'     // Local environment
-  : 'https://personal-website-lyart-mu.vercel.app/api';  // Vercel deployment
+const apiBaseUrl = process.env.API_BASE_URL || 'http://localhost:3000/api';
 
 function Weather () {
     const [weatherData, setWeatherData] = useState(null)
