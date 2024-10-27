@@ -5,13 +5,20 @@ import cors from 'cors';
 
 dotenv.config();
 const app = express();
+const allowedOrigins = [
+    'https://personal-website-lyart-mu.vercel.app', 
+    /https:\/\/personal-website-[\w-]+\.vercel\.app/
+];
 app.use(cors({
     origin: function (origin, callback) {
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin)) {
-            return callback(null, true);
+        if (!origin) return callback(null, true); 
+        
+        if (allowedOrigins.some(pattern => typeof pattern === 'string' 
+            ? pattern === origin 
+            : pattern.test(origin))) {
+            callback(null, true);
         } else {
-            return callback(new Error('Not allowed by CORS'));
+            callback(new Error('Not allowed by CORS'));
         }
     }
   }));
