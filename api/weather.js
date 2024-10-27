@@ -6,9 +6,14 @@ import cors from 'cors';
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
-          ? 'https://personal-website-lyart-mu.vercel.app' 
-          : 'http://localhost:3000',
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('Not allowed by CORS'));
+        }
+    }
   }));
 const PORT = process.env.PORT_3000 || 3000;
 const apikey = process.env.WEATHER_API_KEY;

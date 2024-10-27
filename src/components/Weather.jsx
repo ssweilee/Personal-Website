@@ -9,7 +9,7 @@ function Weather () {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://personal-website-lyart-mu.vercel.app/api/weather')
+        fetch(`${apiBaseUrl}/weather`)
         .then(response => response.json())
         .then(data => {
             setWeatherData(data)
