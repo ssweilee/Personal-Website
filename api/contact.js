@@ -1,17 +1,17 @@
-import express from 'express';
+//import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
 dotenv.config();
 // server used to send emails
-const app = express();
+//const app = express();
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
         ? 'https://personal-website-lyart-mu.vercel.app' 
         : 'http://localhost:5050',
 }));
-app.use(express.json());
+//app.use(express.json());
 const PORT = process.env.PORT_5050 || 5050; 
 
 const contactEmail = nodemailer.createTransport({
@@ -30,7 +30,12 @@ contactEmail.verify((error) => {
   }
 });
 
-app.post("/contact", (req, res) => {
+//app.post("/contact", (req, res) => {
+async function handler(req, res) {
+  if (req.method !== 'POST') {
+      console.error(`Method ${req.method} Not Allowed`);
+      return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
   const { firstName, lastName, email, phone, message } = req.body
   const mail = {
     from:  `${firstName} ${lastName}`,
@@ -52,7 +57,8 @@ app.post("/contact", (req, res) => {
       res.status(200).json({ message: 'Message Sent Successfully', sentMessage: mail })
     }
   });
-});
+};
+//});
 
 //app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
