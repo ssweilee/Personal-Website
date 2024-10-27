@@ -6,6 +6,10 @@ import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
+const apiBaseUrl = process.env.NODE_ENV === 'development' 
+  ? 'http://localhost:3000/api'     // Local environment
+  : 'https://personal-website-lyart-mu.vercel.app/api';  // Vercel deployment
+
 function Contact() {
     const formInitialDetails = {
         firstName: '',
@@ -30,7 +34,7 @@ function Contact() {
         e.preventDefault(); 
         setButtonText("Sending...");
         try {
-            let response = await fetch("/api/contact", {
+            let response = await fetch(`${apiBaseUrl}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
