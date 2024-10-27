@@ -5,7 +5,7 @@ function Weather () {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:3000/weather')
+        fetch('/api/weather')
         .then(response => response.json())
         .then(data => {
             setWeatherData(data)

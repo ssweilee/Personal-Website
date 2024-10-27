@@ -30,7 +30,7 @@ function Contact() {
         e.preventDefault(); 
         setButtonText("Sending...");
         try {
-            let response = await fetch("http://localhost:5050/contact", {
+            let response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
@@ -74,7 +74,8 @@ function Contact() {
                                         <PhoneInput defaultCountry="GB" value={value} placeholder="Phone number(optional)"  onChange={setValue} autoComplete="tel" optional="true"/>
                                         </Col>
                                         <Col size={12} sm={6} className='px-1'>
-                                        <input type='email' value={formDetails.email} placeholder='Email Address' onChange={(e) => onFormUpdate('email', e.target.value)} pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;" autoComplete="email" required/>
+                                        <input type='email' value={formDetails.email} placeholder='Email Address' onChange={(e) => onFormUpdate('email', e.target.value)} pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+ autoComplete="email" required/>
                                         </Col>
                                         <Col size={12} className="px-1">
                                             <textarea rows="6" name="message" value={formDetails.message} placeholder='Message' onChange={(e) => onFormUpdate('message', e.target.value)} required/>
