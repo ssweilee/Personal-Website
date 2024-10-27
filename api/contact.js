@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 // server used to send emails
 //const app = express();
-app.use(cors());
+//app.use(cors());
 //app.use(express.json());
 //const PORT = process.env.PORT_5050 || 5050; 
 
@@ -28,35 +28,36 @@ contactEmail.verify((error) => {
 
 //app.post("/contact", (req, res) => {
 async function handler(req, res) {
-  if (req.method !== 'POST') {
-      console.error(`Method ${req.method} Not Allowed`);
-      return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-  const { firstName, lastName, email, phone, message } = req.body
-  const mail = {
-    from:  `${firstName} ${lastName}`,
-    to: process.env.EMAIL_USER,
-    subject: "Contact from Personal Website",
-    html: `<p>Name: ${firstName} ${lastName}</p>
-           <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
-           <p>Message: ${message}</p>`,
-  };
+  await cors()(req, res, async () => {
+    if (req.method !== 'POST') {
+        console.error(`Method ${req.method} Not Allowed`);
+        return res.status(405).end(`Method ${req.method} Not Allowed`);
+    }
+
+    const { firstName, lastName, email, phone, message } = req.body
+    const mail = {
+      from:  `${firstName} ${lastName}`,
+      to: process.env.EMAIL_USER,
+      subject: "Contact from Personal Website",
+      html: `<p>Name: ${firstName} ${lastName}</p>
+            <p>Email: ${email}</p>
+            <p>Phone: ${phone}</p>
+            <p>Message: ${message}</p>`,
+    };
 
   console.log("Received POST request to /contact");
 
-  contactEmail.sendMail(mail, (error) => {
-    if (error) {
+  try {
+      await contactEmail.sendMail(mail);
+      res.status(200).json({ message: 'Message Sent Successfully', sentMessage: mail });
+    } catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Internal Server Error' });
-    } else {
-      res.status(200).json({ message: 'Message Sent Successfully', sentMessage: mail })
     }
   });
-};
-//});
+}
 
 //app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-export default app;
+export default handler;
 
