@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const apiBaseUrl = process.env.REACT_APP_WEATHER_API_BASE_URL; //|| 'http://localhost:3000/api';
+const apiBaseUrl = process.env.WEATHER_API_BASE_URL; //|| 'http://localhost:3000/api';
 
 function Weather () {
     const [weatherData, setWeatherData] = useState(null)
