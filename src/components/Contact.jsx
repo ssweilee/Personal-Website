@@ -8,7 +8,7 @@ import PhoneInput from 'react-phone-number-input'
 
 const apiBaseUrl = process.env.NODE_ENV === 'development' 
   ? 'http://localhost:5050/api'     // Local environment
-  : 'https://personal-website-lyart-mu.vercel.app/api';  // Vercel deployment
+  : 'https://personal-website-lyart-mu.vercel.app/api/contact';  // Vercel deployment
 
 function Contact() {
     const formInitialDetails = {
