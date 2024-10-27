@@ -6,7 +6,7 @@ import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
-const apiBaseUrl = process.env.API_BASE_URL; //|| 'http://localhost:5050/api';
+const apiBaseUrl = process.env.CONTACT_API_BASE_URL; //|| 'http://localhost:5050/api';
 
 function Contact() {
     const formInitialDetails = {
