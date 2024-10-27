@@ -28,7 +28,7 @@ function Contact() {
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => { 
         e.preventDefault(); 
         setButtonText("Sending...");
         try {
