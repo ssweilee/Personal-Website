@@ -7,7 +7,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
 const apiBaseUrl = process.env.NODE_ENV === 'development' 
-  ? 'http://localhost:3000/api'     // Local environment
+  ? 'http://localhost:5050/api'     // Local environment
   : 'https://personal-website-lyart-mu.vercel.app/api';  // Vercel deployment
 
 function Contact() {
@@ -78,8 +78,7 @@ function Contact() {
                                         <PhoneInput defaultCountry="GB" value={value} placeholder="Phone number(optional)"  onChange={setValue} autoComplete="tel" optional="true"/>
                                         </Col>
                                         <Col size={12} sm={6} className='px-1'>
-                                        <input type='email' value={formDetails.email} placeholder='Email Address' onChange={(e) => onFormUpdate('email', e.target.value)} pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
- autoComplete="email" required/>
+                                        <input type='email' value={formDetails.email} placeholder='Email Address' onChange={(e) => onFormUpdate('email', e.target.value)} pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$" autoComplete="email" required/>
                                         </Col>
                                         <Col size={12} className="px-1">
                                             <textarea rows="6" name="message" value={formDetails.message} placeholder='Message' onChange={(e) => onFormUpdate('message', e.target.value)} required/>
