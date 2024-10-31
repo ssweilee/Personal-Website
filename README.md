@@ -20,16 +20,16 @@ This is a personal website built using React, Bootstrap, Node.js, Express.js, an
 ### Usage:
 1. Install Dependencies: Run the following command in the project folder to install the required dependencies:
 ```npm install```
-2. Start Frontend Service: Run the following command to start the frontend service in development mode:
-```npm start```
-3. Start Backend Service: In another terminal window, run the following command to start the backend service:
-```npm run server```
-4. Open in Browser: Visit http://localhost:5173 in your browser to view the website.
+3. Start Frontend Service: Run the following command to start the frontend service in development mode:
+```node contact.js``` ```node weather.js```
+4. Start Backend Service: In another terminal window, run the following command to start the backend service:
+```npm run dev```
+5. Open in Browser: Visit http://localhost:5173 in your browser to view the website.
 
 ### Contact:
 If you have any questions or feedback regarding this website or its code, please feel free to reach out to me. You can find my contact details on the website or connect with me through LinkedIn or Website.
                 
 
 - <a href="https://www.linkedin.com/in/tzu-wei-lee" target="_blank">Linkedin</a>
-- <a href="https://ssweilee.github.io/Personal-Website/" target="_blank">Website</a>
+- <a href="https://personal-website-77yt3khar-ssweilees-projects.vercel.app" target="_blank">Website</a>
                 
