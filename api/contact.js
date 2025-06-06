@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
 dotenv.config();
-// server used to send send emails
+// server used to send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
