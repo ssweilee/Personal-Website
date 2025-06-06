@@ -12,7 +12,7 @@ const apikey = process.env.WEATHER_API_KEY;
 app.get('/api/weather', async (req, res) => {
   if (req.method === 'GET') {
       try {
-          const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=auto:ip`, { mode: 'cors' });
+          const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=Bristol`, { mode: 'cors' });
           const data = await response.json();
           res.json(data);
       } catch (error) {
