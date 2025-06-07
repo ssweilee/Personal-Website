@@ -3,38 +3,43 @@ import { useState, useEffect } from "react"
 function Weather () {
     const [weatherData, setWeatherData] = useState(null)
     const [error, setError] = useState(null)
-    const API_URL = process.env.NODE_ENV === "development"
-    ? "http://localhost:3000/api/weather"
-    : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather"
 
-    useEffect(() => {
-        const getWeather = async () => {
-          try {
-            const position = await new Promise((resolve, reject) =>
-              navigator.geolocation.getCurrentPosition(resolve, reject)
-            );
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            console.log("User location:", lat, lon);
-      
-            const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
-            const data = await response.json();
-            setWeatherData(data);
-          } catch (err) {
-            console.warn("Failed to get location, fallback to Bristol", err);
-            try {
-              const response = await fetch(`/api/weather`);
-              const data = await response.json();
-              setWeatherData(data);
-            } catch (fetchErr) {
-              setError(fetchErr);
-            }
-          }
-        };
-      
-        getWeather();
-      }, []);
-    
+    const API_BASE =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/weather"
+      : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather";
+
+  useEffect(() => {
+    const getWeather = async () => {
+      try {
+        const position = await new Promise((resolve, reject) =>
+          navigator.geolocation.getCurrentPosition(resolve, reject, {
+            timeout: 10000,
+          })
+        );
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        console.log("User location:", lat, lon);
+
+        const response = await fetch(`${API_BASE}?lat=${lat}&lon=${lon}`);
+        if (!response.ok) throw new Error("Failed to fetch with location");
+        const data = await response.json();
+        setWeatherData(data);
+      } catch (err) {
+        console.warn("Location failed, fallback to Bristol:", err);
+        try {
+          const fallbackRes = await fetch(`${API_BASE}`);
+          if (!fallbackRes.ok) throw new Error("Fallback fetch failed");
+          const fallbackData = await fallbackRes.json();
+          setWeatherData(fallbackData);
+        } catch (fetchErr) {
+          setError(fetchErr);
+        }
+      }
+    };
+
+    getWeather();
+  }, []);
 
     return (
         <div className="weather-container">
