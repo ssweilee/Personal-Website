@@ -16,8 +16,7 @@ const PORT = process.env.WEATHER_PORT || 3000;
 const apikey = process.env.WEATHER_API_KEY;
 
 app.get('/api/weather', async (req, res) => {
-  let userIP = req.query.ip || req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
-  console.log("Received IP:", userIP);
+  let userIP = req.query.ip || (req.headers['x-forwarded-for']?.split(',')[0].trim()) || req.socket.remoteAddress;  console.log("Received IP:", userIP);
   if (req.method === 'GET') {
     
     try {
