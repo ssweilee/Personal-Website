@@ -16,15 +16,19 @@ const PORT = process.env.WEATHER_PORT || 3000;
 const apikey = process.env.WEATHER_API_KEY;
 
 app.get('/api/weather', async (req, res) => {
+  console.log("Received request for /api/weather");
+  let userIP = req.query.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  console.log("Received IP:", userIP);
   if (req.method === 'GET') {
-      try {
-          const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=auto:ip`, { mode: 'cors' });
-          const data = await response.json();
-          res.json(data);
-      } catch (error) {
-          console.error('Error fetching weather data:', error);
-          res.status(500).json({ error: 'An error occurred while fetching weather data' });
-      }
+    
+    try {
+      const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${userIP}`, { mode: 'cors' });
+      const data = await response.json();
+      res.json(data);
+  } catch (error) {
+      console.error('Error fetching weather data:', error);
+      res.status(500).json({ error: 'An error occurred while fetching weather data' });
+  }
   } else {
       res.setHeader('Allow', ['GET']);
       res.status(405).end(`Method ${req.method} Not Allowed`);
