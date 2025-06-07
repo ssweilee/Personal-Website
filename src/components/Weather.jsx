@@ -8,17 +8,30 @@ function Weather () {
     : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather"
 
     useEffect(() => {
-        fetch(API_URL)
-        .then(response => response.json())
-        .then(data => {
-            setWeatherData(data)
-            console.log(data)
-        })
-        .catch (err => {
-            setError(err)
-            console.error(err)
-        })
-    }, [])
+        const getPosition = () =>
+          new Promise((resolve, reject) =>
+            navigator.geolocation.getCurrentPosition(resolve, reject)
+          );
+      
+        getPosition()
+          .then((position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            console.log("User location:", lat, lon);
+            return fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+          })
+          .catch((err) => {
+            console.warn("Location failed, fallback to Bristol", err);
+            return fetch(`/api/weather`);
+          })
+          .then((response) => response.json())
+          .then((data) => {
+            setWeatherData(data);
+          })
+          .catch((err) => {
+            setError(err);
+          });
+      }, []);
     
 
     return (

@@ -16,18 +16,19 @@ const PORT = process.env.WEATHER_PORT || 3000;
 const apikey = process.env.WEATHER_API_KEY;
 
 app.get('/api/weather', async (req, res) => {
-  if (req.method === 'GET') {
-      try {
-          const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=auto:ip`, { mode: 'cors' });
-          const data = await response.json();
-          res.json(data);
-      } catch (error) {
-          console.error('Error fetching weather data:', error);
-          res.status(500).json({ error: 'An error occurred while fetching weather data' });
-      }
-  } else {
-      res.setHeader('Allow', ['GET']);
-      res.status(405).end(`Method ${req.method} Not Allowed`);
+  try {
+    const { lat, lon } = req.query;
+    const query = lat && lon ? `${lat},${lon}` : '51.4545,-2.5879'; 
+
+    const response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${query}&aqi=no`
+    );
+    const data = await response.json();
+    console.log("Fetched weather for location:", query, data.location);
+    res.json(data);
+  } catch (error) {
+    console.error('Weather API error:', error);
+    res.status(500).json({ error: 'Failed to fetch weather' });
   }
 });
 
