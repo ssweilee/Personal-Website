@@ -8,32 +8,30 @@ function Weather () {
     const [userIP, setUserIP] = useState(null);
 
     useEffect(() => {
-        fetch("https://api.ipify.org?format=json") 
-            .then(response => response.json())
-            .then(data => {
-                setUserIP(data.ip);
-                console.log("User IP:", data.ip); 
-            })
-            .catch(error => console.error("Error fetching IP:", error));
-    }, []);
+        fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        const { latitude, longitude } = data;
+        console.log("User latitude:", latitude, "longitude:", longitude);
 
-    useEffect(() => {
-        if (!userIP) return; 
-        const API_URL = process.env.NODE_ENV === "development"
-            ? `http://localhost:3000/api/weather?ip=${userIP}`
-            : `https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather?ip=${userIP}`;
+        // 2. 用經緯度去後端查天氣
+        const API_URL =
+          process.env.NODE_ENV === "development"
+            ? `http://localhost:3000/api/weather?lat=${latitude}&lon=${longitude}`
+            : `https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather?lat=${latitude}&lon=${longitude}`;
 
-        fetch(API_URL)
-            .then(response => response.json())
-            .then(data => {
-                console.log("Weather JSON Data:", data);  
-                setWeatherData(data);
-            })
-            .catch(error => {
-                setError(error);
-                console.error(error);
-            });
-    }, [userIP]);
+        return fetch(API_URL);
+      })
+      .then((res) => res.json())
+      .then((weatherData) => {
+        console.log("Weather data:", weatherData);
+        setWeatherData(weatherData);
+      })
+      .catch((err) => {
+        console.error("Error fetching weather or location:", err);
+        setError(err);
+      });
+  }, []);
     
 
     return (
