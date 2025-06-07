@@ -5,7 +5,11 @@ import cors from 'cors';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*', 
+  methods: ['GET'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); 
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -20,6 +24,8 @@ app.get('/api/weather', async (req, res) => {
   if (req.method === 'GET') {
     
     try {
+      const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${userIP}`;
+        console.log("Final WeatherAPI Request URL:", apiUrl); 
       const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${userIP}`, { mode: 'cors' });
       const data = await response.json();
       console.log("Weather API Response:", data);
