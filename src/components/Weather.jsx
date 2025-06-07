@@ -17,13 +17,13 @@ function Weather () {
             const lon = position.coords.longitude;
             console.log("User location:", lat, lon);
       
-            const response = await fetch(/api/weather?lat=${lat}&lon=${lon});
+            const response = await fetch(`${API_URL}?lat=${lat}&lon=${lon}`);
             const data = await response.json();
             setWeatherData(data);
           } catch (err) {
             console.warn("Failed to get location, fallback to Bristol", err);
             try {
-              const response = await fetch(/api/weather);
+                const response = await fetch(`${API_URL}`);
               const data = await response.json();
               setWeatherData(data);
               console.log(data)
