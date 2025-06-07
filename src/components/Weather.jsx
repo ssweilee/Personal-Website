@@ -26,6 +26,7 @@ function Weather () {
               const response = await fetch(/api/weather);
               const data = await response.json();
               setWeatherData(data);
+              console.log(data)
             } catch (fetchErr) {
               setError(fetchErr);
             }
