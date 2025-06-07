@@ -25,7 +25,10 @@ function Weather () {
 
         fetch(API_URL)
             .then(response => response.json())
-            .then(data => setWeatherData(data))
+            .then(data => {
+                console.log("Weather JSON Data:", data);  
+                setWeatherData(data);
+            })
             .catch(error => {
                 setError(error);
                 console.error(error);
