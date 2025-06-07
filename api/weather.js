@@ -20,24 +20,15 @@ const PORT = process.env.WEATHER_PORT || 3000;
 const apikey = process.env.WEATHER_API_KEY;
 
 app.get('/api/weather', async (req, res) => {
-  let userIP = req.query.ip || (req.headers['x-forwarded-for']?.split(',')[0].trim()) || req.socket.remoteAddress;  console.log("Received IP:", userIP);
-  console.log("Received IP from Client:", userIP);
-  if (req.method === 'GET') {
-    
-    try {
-      const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${encodeURIComponent(userIP)}&fresh=1`;
-      console.log("Final WeatherAPI Request URL:", apiUrl);
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      console.log("Weather API Response:", data);
-      res.json(data);
+  try {
+    const query = "Bristol"; // 或者你想要的任何城市名
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${encodeURIComponent(query)}&aqi=no`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    res.json(data);
   } catch (error) {
-      console.error('Error fetching weather data:', error);
-      res.status(500).json({ error: 'An error occurred while fetching weather data' });
-  }
-  } else {
-      res.setHeader('Allow', ['GET']);
-      res.status(405).end(`Method ${req.method} Not Allowed`);
+    console.error('Weather API error:', error);
+    res.status(500).json({ error: 'Failed to fetch weather data' });
   }
 });
 

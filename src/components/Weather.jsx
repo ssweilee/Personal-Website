@@ -8,27 +8,18 @@ function Weather () {
     const [userIP, setUserIP] = useState(null);
 
     useEffect(() => {
-        fetch("https://ipapi.co/json/")
-      .then((res) => res.json())
-      .then((data) => {
-        const { latitude, longitude } = data;
-        console.log("User latitude:", latitude, "longitude:", longitude);
+        const API_URL = process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/weather"
+      : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather";
 
-        // 2. 用經緯度去後端查天氣
-        const API_URL =
-          process.env.NODE_ENV === "development"
-            ? `http://localhost:3000/api/weather?lat=${latitude}&lon=${longitude}`
-            : `https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather?lat=${latitude}&lon=${longitude}`;
-
-        return fetch(API_URL);
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        console.log("Weather data:", data);
+        setWeatherData(data);
       })
-      .then((res) => res.json())
-      .then((weatherData) => {
-        console.log("Weather data:", weatherData);
-        setWeatherData(weatherData);
-      })
-      .catch((err) => {
-        console.error("Error fetching weather or location:", err);
+      .catch(err => {
+        console.error("Error fetching weather:", err);
         setError(err);
       });
   }, []);
