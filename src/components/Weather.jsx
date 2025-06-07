@@ -8,30 +8,31 @@ function Weather () {
     : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather"
 
     useEffect(() => {
-        const getPosition = () =>
-          new Promise((resolve, reject) =>
-            navigator.geolocation.getCurrentPosition(resolve, reject)
-          );
-      
-        getPosition()
-          .then((position) => {
+        const getWeather = async () => {
+          try {
+            const position = await new Promise((resolve, reject) =>
+              navigator.geolocation.getCurrentPosition(resolve, reject)
+            );
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
             console.log("User location:", lat, lon);
-            return fetch(`/api/weather?lat=${lat}&lon=${lon}`);
-          })
-          .catch((err) => {
-            console.warn("Location failed, fallback to Bristol", err);
-            return fetch(`/api/weather`);
-          })
-          .then((response) => response.json())
-          .then((data) => {
+      
+            const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+            const data = await response.json();
             setWeatherData(data);
-            console.log(data);
-          })
-          .catch((err) => {
-            setError(err);
-          });
+          } catch (err) {
+            console.warn("Failed to get location, fallback to Bristol", err);
+            try {
+              const response = await fetch(`/api/weather`);
+              const data = await response.json();
+              setWeatherData(data);
+            } catch (fetchErr) {
+              setError(fetchErr);
+            }
+          }
+        };
+      
+        getWeather();
       }, []);
     
 
