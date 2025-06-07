@@ -8,11 +8,20 @@ function Weather () {
     : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather"
 
     useEffect(() => {
+        if (navigator.permissions) {
+            navigator.permissions.query({ name: 'geolocation' }).then(result => {
+                if (result.state === 'denied') {
+                    alert('Please allow location access to get your local weather.');
+                }
+            });
+        }
         const getWeather = async () => {
           try {
             const position = await new Promise((resolve, reject) =>
               navigator.geolocation.getCurrentPosition(resolve, reject, {
-                timeout: 15000, 
+                enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
               })
             );
             const lat = position.coords.latitude;
