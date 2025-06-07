@@ -3,26 +3,24 @@ import { useState, useEffect } from "react"
 function Weather () {
     const [weatherData, setWeatherData] = useState(null)
     const [error, setError] = useState(null)
-    
 
-    const [userIP, setUserIP] = useState(null);
+    const API_URL =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000/api/weather"
+        : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather"
 
     useEffect(() => {
-        const API_URL = process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/api/weather"
-      : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather";
-
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        console.log("Weather data:", data);
-        setWeatherData(data);
-      })
-      .catch(err => {
-        console.error("Error fetching weather:", err);
-        setError(err);
-      });
-  }, []);
+        fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
+            setWeatherData(data)
+            console.log(data)
+        })
+        .catch (err => {
+            setError(err)
+            console.error(err)
+        })
+    }, [API_URL])
     
 
     return (
