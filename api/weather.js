@@ -27,7 +27,7 @@ app.get('/api/weather', async (req, res) => {
     try {
       const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${encodeURIComponent(userIP)}&fresh=1`;
       console.log("Final WeatherAPI Request URL:", apiUrl);
-      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${userIP}`, { mode: 'cors' });
+      const response = await fetch(apiUrl);
       const data = await response.json();
       console.log("Weather API Response:", data);
       res.json(data);
