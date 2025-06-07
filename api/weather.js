@@ -21,11 +21,12 @@ const apikey = process.env.WEATHER_API_KEY;
 
 app.get('/api/weather', async (req, res) => {
   let userIP = req.query.ip || (req.headers['x-forwarded-for']?.split(',')[0].trim()) || req.socket.remoteAddress;  console.log("Received IP:", userIP);
+  console.log("Received IP from Client:", userIP);
   if (req.method === 'GET') {
     
     try {
-      const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${userIP}`;
-        console.log("Final WeatherAPI Request URL:", apiUrl); 
+      const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${encodeURIComponent(userIP)}&fresh=1`;
+      console.log("Final WeatherAPI Request URL:", apiUrl);
       const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${userIP}`, { mode: 'cors' });
       const data = await response.json();
       console.log("Weather API Response:", data);
