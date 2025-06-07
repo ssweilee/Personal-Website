@@ -27,6 +27,7 @@ function Weather () {
           .then((response) => response.json())
           .then((data) => {
             setWeatherData(data);
+            console.log(data);
           })
           .catch((err) => {
             setError(err);
