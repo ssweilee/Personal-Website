@@ -13,9 +13,7 @@ function Weather () {
     const getWeather = async () => {
       try {
         const position = await new Promise((resolve, reject) =>
-          navigator.geolocation.getCurrentPosition(resolve, reject, {
-            timeout: 10000,
-          })
+          navigator.geolocation.getCurrentPosition(resolve, reject)
         );
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
