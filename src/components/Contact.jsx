@@ -26,11 +26,16 @@ function Contact() {
         })
     }
 
+    const API_URL = process.env.NODE_ENV === "development"
+    ? "http://localhost:5173/api/contact"
+    : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/contact";
+    console.log("Current environment:", process.env.NODE_ENV);
+
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         setButtonText("Sending...");
         try {
-            let response = await fetch("https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/contact", {
+            let response = await fetch(API_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8",
