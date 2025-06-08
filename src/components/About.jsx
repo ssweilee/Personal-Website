@@ -7,6 +7,7 @@ import { HashLink } from 'react-router-hash-link'
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+import { links } from '../constants/links'
 
 function About() {
     const [ isDeleting, setIsDeleting ] = useState(false)
@@ -57,7 +58,7 @@ function About() {
                             <h3><span className="txt-rotate" data-period="1000" data-rotate='[ "Web Developer", "Student at UoB", "Advertising Strategist" ]'><span className="wrap">{text}</span></span></h3>
                             <p>I am a web developer with a passion for problem-solving and innovation, currently pursuing a Master’s degree in Computer Science at the University of Bristol.<br></br><br></br>I am currently learning C, Java, and computer architecture.</p>
                             <div className="links">
-                                <a href="https://drive.google.com/file/d/1EHkjf0W37UE0zRP7h0CKHa9sKcS6rhBO/view?usp=sharing" target="_blank" rel="noopener noreferrer"><button>Get Resume<ArrowDownCircle size={25} /></button></a>
+                                <a href={links.resume} target="_blank" rel="noopener noreferrer"><button>Get Resume<ArrowDownCircle size={25} /></button></a>
                                 <HashLink to="#connect">
                                     <button className="connect" onClick={() => console.log('connect')}>Let&apos;s connect <ArrowRightCircle size={25} /></button>
                                 </HashLink>

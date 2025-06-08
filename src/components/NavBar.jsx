@@ -10,6 +10,7 @@ import { HashLink } from 'react-router-hash-link'
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+import { links } from '../constants/links'
 
 function NavBar() {
     const [activeLink, setActiveLink] = useState('about')
@@ -67,9 +68,9 @@ function NavBar() {
           </Navbar.Collapse>
           <span className='navbar-text'>
             <div className='social-icons'>
-              <a href="https://www.linkedin.com/in/tzuweilee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
-              <a href='mailto:tzuweilee.20@gmail.com' target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
-              <a href="https://github.com/ssweilee" target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
+              <a href={links.linkedin} target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
+              <a href={links.mail} target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
+              <a href={links.github} target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
             </div>
             <HashLink to='#connect'>
               <button><span>Let&apos;s Connect</span></button>

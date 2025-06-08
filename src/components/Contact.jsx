@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import { links } from '../constants/links'
 
 function Contact() {
     const formInitialDetails = {
@@ -94,7 +95,7 @@ function Contact() {
                                 <Col size={4} md={6} className='right-content'>
                                     <h5>Feel free to send me a message</h5>
                                     <h4><FontAwesomeIcon className="contact-icon" icon={faEnvelope} /> Email</h4>
-                                    <a href='mailto:tzuweilee.20@gmail.com' target='_blank'>tzuweilee.20@gmail.com</a>
+                                    <a href={links.mail} target='_blank'>tzuweilee.20@gmail.com</a>
                                 </Col>
                             </div>   
                         </div>
