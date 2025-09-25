@@ -6,8 +6,8 @@ function Weather () {
 
     const API_URL =
       process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/weather"
-        : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/weather"
+        ? "http://localhost:4000/api/weather"
+        : "https://personal-website-77yt3khar-ssweilees-projects.vercel.app/api/weather"
 
     useEffect(() => {
         fetch(API_URL)

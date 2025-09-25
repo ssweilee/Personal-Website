@@ -4,18 +4,33 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 dotenv.config();
+const router = express.Router();
 const app = express();
+//const PORT = process.env.WEATHER_PORT || 3000;
+const apikey = process.env.WEATHER_API_KEY;
 app.use(cors());
+app.use(express.json());
+
+
+app.get('/api/weather', async (req, res) => {
+  try {
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=Bristol`);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    res.status(500).json({ error: 'Failed to fetch weather data' });
+  }
+});
+
+{/*
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); 
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-const PORT = process.env.WEATHER_PORT || 3000;
-const apikey = process.env.WEATHER_API_KEY;
-
-app.get('/api/weather', async (req, res) => {
+  app.get('/api/weather', async (req, res) => {
   if (req.method === 'GET') {
       try {
           const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=Bristol`, { mode: 'cors' });
@@ -30,10 +45,12 @@ app.get('/api/weather', async (req, res) => {
       res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 });
+  
 
+*/}
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-export default app;
+export default router;
 

@@ -28,8 +28,8 @@ function Contact() {
     }
 
     const API_URL = process.env.NODE_ENV === "development"
-    ? "http://localhost:5173/api/contact"
-    : "https://personal-website-b0jyned55-ssweilees-projects.vercel.app/api/contact";
+    ? "http://localhost:4000/api/contact"
+    : "https://personal-website-77yt3khar-ssweilees-projects.vercel.app/api/contact";
     console.log("Current environment:", process.env.NODE_ENV);
 
     const handleSubmit = async (e) => {

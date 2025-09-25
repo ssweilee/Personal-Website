@@ -4,11 +4,14 @@ import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
 dotenv.config();
-// server used to send emails
+const router = express.Router();
+{/*
+  // server used to send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = process.env.CONTACT_PORT || 5050; 
+  */}
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail', 
@@ -26,7 +29,8 @@ contactEmail.verify((error) => {
   }
 });
 
-app.post('/api/contact', async (req, res) => {
+router.post('/', async (req, res) => {
+//app.post('/api/contact', async (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
   const mail = {
     from: `${firstName} ${lastName}`,
@@ -49,9 +53,11 @@ app.post('/api/contact', async (req, res) => {
     }
   });
 });
-
-app.listen(PORT, () => {
+{/*
+  app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+   */}
 
-export default app;
+
+export default router;
