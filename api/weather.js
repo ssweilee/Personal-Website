@@ -5,16 +5,19 @@ import cors from 'cors';
 
 dotenv.config();
 const router = express.Router();
-const app = express();
+//const app = express();
 //const PORT = process.env.WEATHER_PORT || 3000;
 const apikey = process.env.WEATHER_API_KEY;
-app.use(cors());
-app.use(express.json());
+//app.use(cors());
+//app.use(express.json());
 
+router.get('/', async (req, res) => {
 
-app.get('/api/weather', async (req, res) => {
+  const { lat, lon } = req.query;
+  const location = lat && lon ? `${lat},${lon}` : 'Bristol';
+
   try {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=Bristol`);
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${location}`);
     const data = await response.json();
     res.json(data);
   } catch (error) {
@@ -22,6 +25,7 @@ app.get('/api/weather', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch weather data' });
   }
 });
+
 
 {/*
 app.use((req, res, next) => {
@@ -46,11 +50,10 @@ app.use((req, res, next) => {
   }
 });
   
-
-*/}
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+*/}
 
 export default router;
 
