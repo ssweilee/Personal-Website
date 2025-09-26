@@ -1044,13 +1044,97 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill h2 {
   font-size: 45px;
   font-weight: 700;
+  margin-bottom: 30px;
 }
-.skill p {
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  margin: 14px 0 65px 0;
+.skill-bx h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
 }
+
+.skills-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  border-top: 2px solid #eee;   
+  border-bottom: 2px solid #eee;
+  padding: 40px 0;
+}
+
+.skills-column {
+  flex: 1 1 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  min-width: 250px;
+  background-color: #2C2C2C;
+  padding: 20px 30px;
+  border-radius: 32px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.skills-column.spokenLanguages {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skills-column.languages,
+.skills-column.frameworks {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.skills-column h3 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skill-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.skill-div .skill-icon,
+.skill-div img.svg-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+
+
+.skill-div .skill-icon:hover {
+  color: #ffd700 !important;
+  transform: scale(1.1);
+}
+
+.skill-div img.svg-icon:hover {
+  filter: invert(73%) sepia(77%) saturate(805%) hue-rotate(1deg) brightness(101%) contrast(104%) !important;  
+  transform: scale(1.1);
+}
+.skill-div p {
+  color: #E0E0E0;
+}
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }  
+  100% { transform: translateY(0); }
+}
+
+.skill-div:hover {
+  color: #ffd700;
+  animation: floatText 1.8s ease-in-out infinite;
+}
+
+
+
+{/*
+
+
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1058,18 +1142,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   gap: 35px;
   width: 70%;
   margin: 10px auto;
+  margin-bottom: 50px;
 }
-@media (max-width: 767px) {
-  .skills-container {
-    width: 90%;
-  }
+.skill p {
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 65px 0;
 }
-.skill-div .skill-icon,
-.skill-div img.svg-icon {
-  width: 50px;
-  height: 50px;
-  transition: all 0.3s ease;
-}
+
+
+
+
 .skill-div img.svg-icon[src*="express"] {
   scale: 2.2;
   margin-top: 5px;
@@ -1087,20 +1171,58 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   filter: invert(73%) sepia(77%) saturate(805%) hue-rotate(1deg) brightness(101%) contrast(104%) !important;  
   transform: scale(1.1);
 }
-.resume-link-wrapper {
-  margin-top: 40px;  
-}
-.resume-link {
-  font-size: 14px;
-  margin-top: 30px;
-}
+
 .resume-link a {
   text-decoration: underline;
   color: inherit;
   transition: color 0.3s ease;
 }
+    */}
+.resume-link-wrapper {
+  margin-top: 40px;  
+}
+.resume-link {
+  font-size: 14px;
+}
 .resume-link a:hover {
   color: #ffd700;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .skills-column {
+    grid-template-columns: repeat(2, 1fr); 
+    min-width: 200px;
+  }
+  .skill-bx h2 {
+    font-size: 40px;
+  }
+  .skill-bx h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .skills-column {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px;
+    padding: 15px 20px;
+    min-width: auto;
+  }
+  .skill-bx h2 {
+    font-size: 36px;
+  }
+  .skill-bx h3 {
+    font-size: 22px; 
+  }
+  .skill-div .skill-icon,
+  .skill-div img.svg-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Projects Css */
