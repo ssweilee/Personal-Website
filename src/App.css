@@ -1005,6 +1005,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 @media (max-width: 768px) {
+  .about {
+    padding: auto 5%; 
+  }
   .about h1 {
     font-size: clamp(24px, 8vw, 40px);
   }
@@ -1202,6 +1205,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 @media (max-width: 767px) {
+  .skills {
+    padding: auto 5%; 
+  }
   .skills-wrapper {
     flex-direction: column;
     gap: 50px;
@@ -1343,18 +1349,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact {
   padding: 60px 0 0 0;
 }
+.contact-container {
+  max-width: 1200px;  
+  margin: 0 auto;      
+  padding: 0 20px;  
+  box-sizing: border-box;    
+}
 .contact .align-items-center{
   margin: 0;
 }
 .contact .contact-content {
   display: flex;
   justify-content: space-between;
+  gap: 80px;
 }
-@media (max-width: 767px) {
-  .contact-content {
-    flex-direction: column;
-  }
+.left-content, .right-content {
+  flex: 1;
 }
+
 @media (min-width: 768px) {
   .contact-content {
     flex-direction: row;
@@ -1365,12 +1377,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  @media (max-width: 767px) {
-    margin-top: 10%;
-  }
-  @media (min-width: 768px) {
-    margin-left: 10%;
-  }
 }
 .contact .contact-content .right-content h5 {
   font-size: 24px;
@@ -1397,7 +1403,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   justify-self: center;
 }
 .contact form input, 
-.contact form textarea {
+.contact form textarea,
+.phone-input .PhoneInputInput {
   width: 100%;
   border-radius: 20px;
   margin: 0 0 8px 0;
@@ -1445,6 +1452,30 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact p {
   font-size: 18px;
 }
+
+@media (max-width: 767px) {
+  .contact .contact-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5%; 
+    box-sizing: border-box;
+  }
+  .contact .contact-content .right-content {
+    margin-left: 0;
+    margin-top: 10%;
+    align-items: flex-start;
+  }
+  .contact form input,
+  .contact form textarea,
+  .phone-input .PhoneInputInput {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .contact .right-content {
+    margin-bottom: 20px;
+  }
+}
+
 /* Footer Css */
 .footer {
   padding: 0 0 50px 0;

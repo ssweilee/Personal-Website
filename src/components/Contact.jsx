@@ -94,8 +94,7 @@ function Contact() {
                                 </Col>
                                 <Col size={4} md={6} className='right-content'>
                                     <h5>Feel free to send me a message</h5>
-                                    <h4><FontAwesomeIcon className="contact-icon" icon={faEnvelope} /> Email</h4>
-                                    <a href={links.mail} target='_blank'>tzuweilee.20@gmail.com</a>
+                                    <h4><FontAwesomeIcon className="contact-icon" icon={faEnvelope} /> <a href={links.mail} target='_blank'>tzuweilee.20@gmail.com</a></h4>
                                 </Col>
                             </div>   
                         </div>
