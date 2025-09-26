@@ -134,11 +134,6 @@ p.danger {
 #dark nav.navbar .navbar-toggler-icon:focus {
   border-bottom: 2px solid #fff;
 }
-#dark .about .tagline {
-  background: linear-gradient(90.21deg, rgba(255, 255, 255, 0.8) -5.91%, rgba(255, 255, 255, 0.95) 50.7%, rgba(255, 255, 255, 0.8) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5); 
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); 
-}
 #dark .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
@@ -263,12 +258,6 @@ p.danger {
 #light nav.navbar .navbar-toggler-icon,
 #light nav.navbar .navbar-toggler-icon:focus {
   border-bottom: 2px solid #121212;
-}
-#light .about .tagline {
-  background: linear-gradient(90.21deg, rgba(0, 0, 0, 0.8) -5.91%, rgba(0, 0, 0, 0.95) 50.7%, rgba(0, 0, 0, 0.8) 111.58%);
-  border: 1px solid rgba(0, 0, 0, 0.5); 
-  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7); 
-  color: #fff;
 }
 #light .txt-rotate > .wrap {
   border-right: 0.08em solid #fff;
@@ -476,8 +465,8 @@ span .navbar-text {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem; 
-  margin-top: 2vh;
+  margin-bottom: 0.5rem; 
+  margin-top: 1vh;
 }
 
 .hero-main-visual {
@@ -842,37 +831,95 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /* About Css */
 .about {
-  margin-top: 0;
-  padding: 200px 0 150px 0;
+  text-align: center;
+  padding: clamp(60px, 12vh, 120px) 5% clamp(60px, 10vh, 150px) 5%;
+  position: relative;
 }
-.about .tagline {
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 8px 10px;
-  font-size: 20px;
-  margin-bottom: 16px;
-  display: inline-block;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px; 
+  padding: 0 5%;     
+  box-sizing: border-box;
 }
 .about h1 {
-  font-size: 65px;
+  font-size: clamp(32px, 5vw, 65px);
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
   margin-bottom: 20px;
   display: block;
 }
+/*
+.about h3.rotating-text {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 500;
+  margin-bottom: clamp(8px, 1vw, 40px);
+  min-height: 32px; 
+  white-space: nowrap;
+}
+  */
+.intro-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  justify-content: center;
+}
+.name-location {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items:last baseline; 
+  gap: 15px;
+  margin-bottom: 8px;
+}
+.name-location h1 {
+  font-size: clamp(32px, 5vw, 65px);
+  white-space: nowrap;
+  margin: 0;
+  line-height: 1; 
+}
+.name-location .location {
+  margin-left: auto;
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: 400;
+  white-space: nowrap;
+}
 .about p {
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
+  width: 100%;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  width: 96%;
-  line-height: 25px;
   margin-top: 20px;
 }
-.about .links {
+.about .intro {
+  text-align: left;
+  line-height: 1.6;
+}
+.about .highlight {
+  font-weight: 600;
+  color: #1ABC9C; 
+  font-style: italic;
+}
+.about .link {
   display: flex;
-  flex-direction: row;
-  gap: 55px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: clamp(10px, 3vw, 30px);
+  font-size: clamp(16px, 2vw, 20px);
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
 }
 .about a {
   text-decoration: none;
@@ -880,7 +927,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .about button {
   font-weight: 700;
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: clamp(6px, 3vh, 10px);
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -895,11 +942,37 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .about button:hover svg {
   margin-left: 25px;
 }
-.about .align-items-center .scroll-down {
-  font-size: 28px;
+.about-tags.rotating-tags {
   display: flex;
   justify-content: center;
-  margin-top: 5px;
+  gap: 15px;
+  gap: clamp(10px, 2vw, 20px);
+  margin-top: clamp(5px, 1vw, 15px);
+  flex-wrap: wrap;
+}
+.about-tags.rotating-tags .tag {
+  background-color: #FFF; 
+  color: #000;
+  border: 2px solid #000;
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 20px);
+  font-size: clamp(14px, 1.5vw, 18px);
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.about-tags.rotating-tags .tag.active {
+  background-color: black;
+  color: white;
+  border: 2px solid #FFF;
+}
+.about-tags .tag:hover {
+  transform: scale(1.05);
+}
+.about .scroll-down {
+  font-size: clamp(20px, 4vw, 28px);
+  margin-top: clamp(15px, 3vw, 35px);
+  display: flex;
+  justify-content: center;
 }
 .about .scroll-down svg {
   cursor: pointer;
@@ -916,11 +989,47 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     transform: translateY(20px);
   }
 }
-@media (max-width: 767px) {
-  .about {
-    padding-top: 160px;
+
+@media (max-width: 1200px) {
+  .about h1 {
+    font-size: clamp(32px, 6vw, 55px);
+  }
+
+  .about h3.rotating-text {
+    font-size: clamp(16px, 4vw, 24px);
+    margin-bottom: clamp(8px, 2.5vw, 20px);
+  }
+
+  .about p.intro {
+    font-size: clamp(14px, 1.8vw, 16px);
   }
 }
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: clamp(24px, 8vw, 40px);
+  }
+  .name-location .location {
+    font-size: clamp(12px, 4vw, 18px);
+  }
+  .about h3.rotating-text {
+    font-size: clamp(14px, 5vw, 20px);
+    margin-bottom: clamp(6px, 3vw, 15px);
+  }
+  .about p.intro {
+    font-size: clamp(13px, 3vw, 15px);
+  }
+  .about-tags .tag {
+    font-size: clamp(10px, 2.5vw, 12px);
+    padding: clamp(4px, 1.5vw, 10px) clamp(8px, 2vw, 14px);
+  }
+  .about .links button {
+    font-size: clamp(14px, 3vw, 18px);
+  }
+  .about .scroll-down {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+}
+
 /* Skills Css */
 .skill {
   padding: 0 0 100px 0;
