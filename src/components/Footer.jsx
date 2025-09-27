@@ -14,7 +14,7 @@ function Footer () {
                         <a href={links.mail} target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
                         <a href={links.github} target="_blank"><FontAwesomeIcon className="social-icon" icon={faGithub} /></a>
                     </div>
-                    <span>CopyRight © {new Date().getFullYear()} Designed by Tzu Wei Lee. All Right Reserved</span>
+                    <span>CopyRight © {new Date().getFullYear()} Designed by Sandy Lee. All Right Reserved</span>
                 </Row>
             </Container>
         </footer>
