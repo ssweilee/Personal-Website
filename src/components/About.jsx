@@ -4,9 +4,7 @@ import { ArrowRightCircle, ArrowDownCircle } from "react-bootstrap-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { HashLink } from 'react-router-hash-link'
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+
 
 function About() {
     {/*
@@ -61,7 +59,7 @@ function About() {
     }, []);
 
     return (
-        <Router>
+
             <section className="about" id="about">
                 <Container fluid style={{ maxWidth: '1200px', padding: '0 5%' }}>
                     <Row className="justify-content-center">
@@ -110,7 +108,7 @@ function About() {
                     </Row>
                 </Container>
             </section>
-        </Router>
+
     )
 }
 

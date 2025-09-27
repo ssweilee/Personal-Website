@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -6,8 +7,8 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { useState, createContext } from "react"
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 
 export const ThemeContext = createContext(null)
 
@@ -18,17 +19,20 @@ function App() {
     setTheme((curr) => (curr === "dark" ? "light" : "dark"))
   }
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="App" id={theme}>
-        <NavBar />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
-    </ThemeContext.Provider>
+    <Router>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className="App" id={theme}>
+          <NavBar />
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Footer />          
+        </div>
+      </ThemeContext.Provider>
+    </Router>
+    
   )
 }
 
