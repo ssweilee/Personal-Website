@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import "./Projects_chatG.css";
 import travelapp from '../assets/img/travelApp.svg';
 import personalweb from '../assets/img/personalweb.svg';
 import takeaimgif from '../assets/img/takeaim.gif';
