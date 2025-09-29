@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { links } from "../constants/links";
 import heroImg from '../assets/img/hero-img.png'
+import { useContext } from "react";
+import { ThemeContext } from "../App";
+
 
 const ballCount = 3; 
 function rand(min, max) {
@@ -8,16 +11,20 @@ function rand(min, max) {
 }
 
  // bell colour gradient
-function randomSoftGradient(baseHue = null, offset = 0) {
+function randomSoftGradient(baseHue = null, offset = 0, theme = 'light') {
    const hue = baseHue !== null ? (baseHue + offset) % 360 : Math.floor(rand(0, 360));
    const hue2 = (hue + Math.floor(rand(30, 80))) % 360;
-   const c1 = `hsla(${hue}, 70%, 60%, 0.70)`;
-   const c2 = `hsla(${hue2}, 70%, 60%, 0.88)`;
+
+   const lightness = theme === 'dark' ? '70%' : '60%';
+
+   const c1 = `hsla(${hue}, 70%, ${lightness}, 0.7)`;
+   const c2 = `hsla(${hue2}, 70%, ${lightness}, 0.88)`;
 
    return `linear-gradient(135deg, ${c1}, ${c2})`;
 }
 
 function Hero() {
+   const { theme } = useContext(ThemeContext);
    const containerRef = useRef(null);
    const [balls, setBalls] = useState([]);
    const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -121,7 +128,7 @@ function Hero() {
             const newHue = (hue + colorHueShift) % 360;
             hue = newHue;
             const hue2 = (newHue + Math.floor(rand(30, 80))) % 360;
-            const color = `linear-gradient(135deg, hsla(${newHue},70%,60%,0.7), hsla(${hue2},70%,60%,0.88))`;
+            const color = randomSoftGradient(newHue, Math.floor(rand(30, 80)), theme);
 
 
             return { ...ball, x, y, vx, vy, hue: newHue, color };

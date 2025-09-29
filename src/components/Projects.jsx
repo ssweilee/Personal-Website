@@ -242,31 +242,42 @@ const Projects = () => {
                   </a>
                 ) : selectedProject.images.length > 1 ? (
                   <div className="modal-multiple-images">
-                    {selectedProject.images.map((img, idx) => (
-                      <a
-                        key={idx}
-                        href={selectedProject.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src={img}
-                          alt={`${selectedProject.title} ${idx + 1}`}
-                          className="modal-multi-img"
-                        />
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <a
-                    href={selectedProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={selectedProject.images[0]} alt={selectedProject.title} />
-                  </a>
-                )}
-              </div>
+                    {selectedProject.images.map((img, idx) =>
+        selectedProject.link && selectedProject.link !== "#" ? (
+          <a
+            key={idx}
+            href={selectedProject.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={img}
+              alt={`${selectedProject.title} ${idx + 1}`}
+              className="modal-multi-img"
+            />
+          </a>
+        ) : (
+          <img
+            key={idx}
+            src={img}
+            alt={`${selectedProject.title} ${idx + 1}`}
+            className="modal-multi-img"
+          />
+        )
+      )}
+    </div>
+  ) : selectedProject.link && selectedProject.link !== "#" ? (
+    <a
+      href={selectedProject.link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={selectedProject.images[0]} alt={selectedProject.title} />
+    </a>
+  ) : (
+    <img src={selectedProject.images[0]} alt={selectedProject.title} />
+  )}
+</div>
             </div>
               <div className="modal-text">
                 {selectedProject.link && selectedProject.link !== "#" ? (
