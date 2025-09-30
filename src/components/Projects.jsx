@@ -53,7 +53,7 @@ const projects = [
         <li>Planned and coordinated team workflow using Git-based Agile methodology</li>
         <li>Implemented profile picture upload & management across multiple app sections</li>
         <li>Built Profile Editing page with backend integration</li>
-        <li>Integrated location APIs and AI assistant using IBM Watsonx</li>
+        <li>Integrated location APIs to enhance user experience</li>
       </ul>
     </>
     ),
