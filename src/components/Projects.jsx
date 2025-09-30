@@ -11,11 +11,11 @@ const projects = [
     title: "Full-Stack Personal Website - Project Showcasing",
     date: "",
     shortDescription:
-      "A personal portfolio site integrating front & back end features and deployment to showcase my technical skills.",
+      "A personal portfolio website integrating front & back end features and deployment to showcase my technical skills.",
     description: (
       <>
         <p>
-          A personal portfolio webpage designed to showcase technical skills and demonstrate frontend–backend integration.
+          A personal portfolio website designed to showcase technical skills and demonstrate frontend–backend integration.
         </p>
         <p>
           <strong>Highlights:</strong> modular React components, weather API integration, light/dark toggle, environment

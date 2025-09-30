@@ -189,9 +189,11 @@ p.danger {
 #dark .hero-project {
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.75);
 }
-#dark .project-date,
-#dark .view-more-text {
+#dark .project-date {
   color: #666;
+}
+#dark .view-more-text {
+  color: #cccccc;
 }
 #dark .tech-tag {
   background: #0f0f0f;
@@ -2208,6 +2210,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding-bottom: 100px;
 }
 .contact .contact-content .right-content h5 {
   font-size: 24px;
