@@ -308,13 +308,31 @@ const Projects = () => {
               )}
             </div>
           </div>
-          <button className="modal-prev" onClick={showPrev}>
+          <button   
+            className="modal-prev" 
+            onClick={(e) => {
+              e.stopPropagation(); 
+              showPrev();
+            }}
+          >
               ←
             </button>
-            <button className="modal-next" onClick={showNext}>
+            <button 
+              className="modal-next"
+              onClick={(e) => {
+                e.stopPropagation();
+                showNext();
+              }}
+            >
               →
             </button>
-            <button className="modal-close" onClick={closeModal}>
+            <button 
+              className="modal-close"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeModal();
+              }}
+            >
               ✕
             </button>
         </div>

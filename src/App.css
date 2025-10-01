@@ -1613,6 +1613,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   flex-direction: column;
   overflow-y: auto; 
+  z-index: 1000; 
 }
 
 .modal-close {
@@ -1717,20 +1718,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .modal-prev,
 .modal-next,
 .modal-close {
+  position: fixed;
+  z-index: 1100;  
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  transition: background 0.2s ease;
 }
 
 .modal-prev,
 .modal-next {
-  position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  border: none;
   font-size: 2rem;
   padding: 0.5rem 1rem;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1100;
-  transition: background 0.2s ease;
 }
 
 .modal-prev {
@@ -1739,6 +1740,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .modal-next {
   right: 2rem;
+}
+
+.modal-close {
+  top: 2rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-title-link {
