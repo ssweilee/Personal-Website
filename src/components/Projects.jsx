@@ -218,15 +218,7 @@ const Projects = () => {
         <div className={`modal-overlay ${selectedProject ? "active" : ""}`}
         onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-prev" onClick={showPrev}>
-              ←
-            </button>
-            <button className="modal-next" onClick={showNext}>
-              →
-            </button>
-            <button className="modal-close" onClick={closeModal}>
-              ✕
-            </button>
+            
             <div className="modal-body">
               <div className="modal-image">
                 {window.innerWidth <= 768 ? (
@@ -243,80 +235,88 @@ const Projects = () => {
                 ) : selectedProject.images.length > 1 ? (
                   <div className="modal-multiple-images">
                     {selectedProject.images.map((img, idx) =>
-        selectedProject.link && selectedProject.link !== "#" ? (
-          <a
-            key={idx}
-            href={selectedProject.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={img}
-              alt={`${selectedProject.title} ${idx + 1}`}
-              className="modal-multi-img"
-            />
-          </a>
-        ) : (
-          <img
-            key={idx}
-            src={img}
-            alt={`${selectedProject.title} ${idx + 1}`}
-            className="modal-multi-img"
-          />
-        )
-      )}
-    </div>
-  ) : selectedProject.link && selectedProject.link !== "#" ? (
-    <a
-      href={selectedProject.link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src={selectedProject.images[0]} alt={selectedProject.title} />
-    </a>
-  ) : (
-    <img src={selectedProject.images[0]} alt={selectedProject.title} />
-  )}
-</div>
-            </div>
-              <div className="modal-text">
-                {selectedProject.link && selectedProject.link !== "#" ? (
+                      selectedProject.link && selectedProject.link !== "#" ? (
+                        <a
+                          key={idx}
+                          href={selectedProject.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src={img}
+                            alt={`${selectedProject.title} ${idx + 1}`}
+                            className="modal-multi-img"
+                          />
+                        </a>
+                      ) : (
+                        <img
+                          key={idx}
+                          src={img}
+                          alt={`${selectedProject.title} ${idx + 1}`}
+                          className="modal-multi-img"
+                        />
+                      )
+                    )}
+                  </div>
+                ) : selectedProject.link && selectedProject.link !== "#" ? (
                   <a
                     href={selectedProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="modal-title-link"
                   >
-                    <h3>{selectedProject.title}</h3>
+                    <img src={selectedProject.images[0]} alt={selectedProject.title} />
                   </a>
                 ) : (
+                  <img src={selectedProject.images[0]} alt={selectedProject.title} />
+                )}
+              </div>
+            </div>
+            <div className="modal-text">
+              {selectedProject.link && selectedProject.link !== "#" ? (
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-title-link"
+                >
                   <h3>{selectedProject.title}</h3>
-                )}
-                <span className="project-date">{selectedProject.date}</span>
-                <div className="project-description">
-                  {selectedProject.description}
-                </div>
-                
-                <div className="project-tech">
-                  {selectedProject.tech.map((tech, i) => (
-                    <span className="tech-tag" key={i}>
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                {selectedProject.link && selectedProject.link !== "#" && (
-                  <a
-                    href={selectedProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                  >
-                    View Project →
-                  </a>
-                )}
-             
+                </a>
+              ) : (
+                <h3>{selectedProject.title}</h3>
+              )}
+              <span className="project-date">{selectedProject.date}</span>
+              <div className="project-description">
+                {selectedProject.description}
+              </div>
+              
+              <div className="project-tech">
+                {selectedProject.tech.map((tech, i) => (
+                  <span className="tech-tag" key={i}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              {selectedProject.link && selectedProject.link !== "#" && (
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-link"
+                >
+                  View Project →
+                </a>
+              )}
             </div>
           </div>
+          <button className="modal-prev" onClick={showPrev}>
+              ←
+            </button>
+            <button className="modal-next" onClick={showNext}>
+              →
+            </button>
+            <button className="modal-close" onClick={closeModal}>
+              ✕
+            </button>
         </div>
       )}
     </section>
