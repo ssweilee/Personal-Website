@@ -36,7 +36,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "AI-powered Travel App – Personalised Itinerary Planner",
+    title: "AI Travel App – Personalised Itinerary Planner",
     collaboration: "IBM x University of Bristol",
     date: "06/2025 – 09/2025",
     shortDescription: "Cross-platform AI travel app that generates personalised itineraries and integrates social features, developed in collaboration with IBM and the University of Bristol.",
@@ -89,7 +89,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "AI-Powered Trash Classifier App",
+    title: "Trash Classifier",
     date: "02/2025",
     shortDescription:
     "Cross-platform mobile app built at BrisHack 2025 to promote sustainable habits by classifying and sorting trash using AI.",
