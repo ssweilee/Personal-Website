@@ -1743,7 +1743,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .modal-close {
-  top: 2rem;
+  position: absolute;
+  top: 1.5rem;
   right: 2rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -1751,6 +1752,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1200;
 }
 
 .modal-title-link {
