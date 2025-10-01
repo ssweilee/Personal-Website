@@ -603,7 +603,8 @@ height: auto;
 }
 .navbar-text button {
 font-weight: 700;
-padding: 18px 34px;
+height: clamp(36px, 4vw, 48px);
+padding: 0 clamp(12px, 2vw, 20px);
 font-size: 18px;
 margin-left: 18px;
 position: relative;
@@ -760,13 +761,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     transform: translateY(0);
   }
 }
-
   .navbar-text {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 20px;
+    gap: clamp(4px, 1vw, 8px);
+  }
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;  
+    align-items: center;
+  }  
+  .social-icons a img,
+  .social-icons a svg {
+    width: clamp(18px, 4vw, 20px);
+    height: clamp(18px, 4vw, 20px);
   }
   .navbar-tools {
     display: flex;
