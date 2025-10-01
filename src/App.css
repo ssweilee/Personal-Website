@@ -1860,10 +1860,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .modal-content {
     width: 95%;
     padding: 1rem 1.5rem;
-    max-height: 85vh;       
+    max-height: 82vh;       
     overflow-y: auto;        
     overflow-x: hidden;
     align-items: center;  
+    margin-top: 1.5rem;
   }
 
   .modal-body {
