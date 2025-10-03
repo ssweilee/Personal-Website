@@ -38,7 +38,7 @@ const projects = [
     id: 2,
     title: "AI Travel App – Personalised Itinerary Planner",
     collaboration: "IBM x University of Bristol",
-    date: "06/2025 – 09/2025",
+    date: "05/2025 – 09/2025",
     shortDescription: "Cross-platform AI travel app that generates personalised itineraries and integrates social features, developed in collaboration with IBM and the University of Bristol.",
     description: (
       <>

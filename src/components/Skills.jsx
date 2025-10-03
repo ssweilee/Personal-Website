@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCss3Alt, faGitAlt, faGithub, faHtml5, faJs, faReact, faBootstrap, faMailchimp, faNode, faJava, faPython} from '@fortawesome/free-brands-svg-icons'
 import { faBook, faC, faDatabase } from '@fortawesome/free-solid-svg-icons'
+import { faLinux } from '@fortawesome/free-brands-svg-icons'
 //import 'animate.css'
 import TrackVisibility from 'react-on-screen'
 import { Container } from 'react-bootstrap'
@@ -26,7 +27,7 @@ function Skills () {
         { img: express, label: 'Express.js' },
         { img: flutter, label: 'Flutter' },
         { icon: faGitAlt, label: 'Git' },
-        { icon: faGithub, label: 'GitHub' },
+        { icon: faLinux, label: 'Linux' },
     ];
 
     const spokenLanguages = [
