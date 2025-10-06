@@ -137,6 +137,16 @@ p.danger {
 #dark .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
+#dark .about-tags.rotating-tags .tag {
+  background-color: #000000; 
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+#dark .about-tags.rotating-tags .tag.active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid #000000;
+}
 #dark .hero {
   background-color: #050505 !important;
 }
@@ -353,6 +363,16 @@ p.danger {
 }
 #light .txt-rotate > .wrap {
   border-right: 0.08em solid #fff;
+}
+#light .about-tags.rotating-tags .tag {
+  background-color: #FFF; 
+  color: #000;
+  border: 2px solid #000;
+}
+#light .about-tags.rotating-tags .tag.active {
+  background-color: black;
+  color: white;
+  border: 2px solid #FFF;
 }
 #light .hero {
   background-color: #FAFAFA;
@@ -894,6 +914,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 2rem;
+  justify-content: center;
+  padding: 0 !important;
+  text-align: center;
 }
 
 .highlight {

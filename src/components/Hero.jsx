@@ -225,12 +225,12 @@ function Hero() {
             />
          </div>
          <h1 className="hero-headline">
-            Think as a problem-solver, build as an engineer.
+            Think like a problem-solver, build like an engineer.
          </h1>
          <p className="hero-tagline">
-            I build <span class="highlight">full-stack</span> applications and design <span class="highlight">user-centred</span> solutions to
-            turn ideas into impactful software.
+            I build <span className="highlight">full-stack</span> applications and design <span className="highlight">user-centred</span> solutions — bridging software engineering with <span className="highlight">AdTech</span> expertise.
          </p>
+
          <div className="hero-cta">
             <a href="#projects" className="btn-primary">
                View Projects

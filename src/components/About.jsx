@@ -7,46 +7,8 @@ import { HashLink } from 'react-router-hash-link'
 
 
 function About() {
-    {/*
-         
-    const [ isDeleting, setIsDeleting ] = useState(false)
-    const [ text, setText ] = useState('')
-    const [ delta, setDelta ] = useState(100 - Math.random() * 100)
-    const [ index, setIndex ] = useState(0);
-    const toRotate = [ "Full-Stack Developer", "User-Centred Thinker", "Problem Solver" ]
-    const period = 1500
 
-    useEffect(() => {
-        let ticker = setInterval(() => {
-            tick()
-        }, delta)
-
-        return () => { clearInterval(ticker) }
-    }, [text])
-
-    const tick = () => {
-        let i = index % toRotate.length
-        let fullText = toRotate[i]
-        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)
-        
-        setText(updatedText)
-
-        if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 3)
-        }
-
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true)
-            setDelta(period)
-        } else if(isDeleting && updatedText === '') {
-            setIsDeleting(false)
-            setIndex(prevIndex => prevIndex + 1);
-            setDelta(100)
-        } 
-    }
-    */}
-
-    const tags = ["Full-stack development", "Agile & teamwork", "Problem-solving"];
+    const tags = ["Software Engineer", "Full Stack Developer", "AdTech Specialist"];
     const [activeIndex, setActiveIndex] = useState(0);
     const period = 2000; 
 
@@ -78,21 +40,16 @@ function About() {
                                 </span>
                             ))}
                             </div>
-                            {/*
-                                <div className="intro-header">
-                                <h3 className="rotating-text">
-                                    <span className="wrap">{text}</span>
-                                </h3>
-                            </div>
-                            */}
-                            
+
                             <p className="intro">
-                                During my MSc in Computer Science at the University of Bristol, I sharpened my skills in <span className="highlight">programming</span>, <span className="highlight">system design</span>, and modern development tools. I developed an <span className="highlight">AI travel app in collaboration with IBM</span> and built a <span className="highlight">team-based game project</span> that honed both my technical and collaborative abilities.
+                                During my MSc in Computer Science at the University of Bristol, I developed strong skills in programming, web development, and modern software tools. I developed an <span className="highlight">AI travel app</span> in collaboration with IBM and worked on a game project within a team that strengthened both my technical and collaborative abilities. I also took part in hackathons to broaden my problem-solving experience and apply my skills in real-world settings.
                                 <br /><br />
-                                Beyond academia, I competed in <span className="highlight">two hackathons</span>, applying <span className="highlight">agile methods</span> and <span className="highlight">version control</span> to deliver innovative solutions under time pressure. With a background in advertising and project management, I bring a unique mix of technical expertise and <span className="highlight">user-centred thinking</span> to tackle real-world challenges.
+                                Before moving into software engineering, I worked in the <span className="highlight">AdTech</span> industry, collaborating with designers and developers to deliver data-driven solutions that improved traffic, engagement, and advertising performance. This experience gave me a strong foundation in user behaviour, analytics, and scalable web technologies — bridging commercial understanding with engineering practice.
                                 <br /><br />
-                                I&apos;m passionate about turning ideas into impactful software, and I&apos;m excited to bring this energy into collaborative projects and professional opportunities.
+                                I’m passionate about building products that connect technology with real-world impact, combining <span className="highlight">technical problem-solving</span> with <span className="highlight">creative and user-centred thinking</span>.
                             </p>
+
+
                             <div className="link">
                                 <HashLink to="#connect">
                                     <button className="connect" onClick={() => console.log('connect')}>Let&apos;s connect <ArrowRightCircle size={25} /></button>
