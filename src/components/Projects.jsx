@@ -35,7 +35,7 @@ const projects = [
         <ul>
           <li><strong>Data consistency:</strong> Standardized JSON schemas to ensure seamless Lambda–frontend communication</li>
           <li><strong>Performance bottlenecks:</strong> Reduced Bedrock API latency by splitting logic into concurrent Lambda functions</li>
-          <li><strong>IAM configuration:</strong> Implemented fine-grained IAM roles to securely connect Bedrock, DynamoDB and S3 services</li>
+          <li><strong>IAM configuration:</strong> Implemented IAM roles to securely connect Bedrock, DynamoDB and S3 services</li>
           {/*<li><strong>Error handling:</strong> Added retry and error-boundary logic in Next.js API routes to ensure reliable backend calls.</li>*/}
         </ul>
         </div>

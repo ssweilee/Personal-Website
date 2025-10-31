@@ -42,19 +42,22 @@ function About() {
                             </div>
                                 <p className="intro">
                                     I’m a recent MSc Computer Science graduate with hands-on experience in 
-                                    <span className="highlight">full-stack development</span>, 
-                                    <span className="highlight">AI-integrated web applications</span>, and 
-                                    <span className="highlight">cloud services</span>.  
+                                    <span className="highlight"> full-stack development</span>, 
+                                    <span className="highlight"> AI-integrated web applications</span>, and 
+                                    <span className="highlight"> cloud services</span>.  
                                     <br /><br />
                                     Key projects include:
                                     <ul>
                                         <li>Developed a <span className="highlight">full-stack travel app</span> with IBM, using React Native, Node.js, and Watsonx AI, focusing on usability and iterative testing.</li>
-                                        <li>Built an <span className="highlight">AI Sentiment & Trend Dashboard</span> using AWS serverless tools and NLP APIs to generate instant audience insights.</li>
+                                        <li>Built an <span className="highlight">AI Sentiment & Trend Dashboard</span> using AWS serverless tools and NLP APIs to generate audience insights.</li>
                                         <li>Participated in hackathons and team-based projects to strengthen problem-solving, collaboration, and software engineering skills.</li>
                                     </ul>
-                                    My prior experience in <span className="highlight">AdTech</span> exposed me to analytics and bridging technical solutions with business needs.  
-                                    <br /><br />
-                                    I’m passionate about designing <span className="highlight">human-centered software</span> and exploring how AI can enhance user experience in everyday digital tools.
+                                    <p>
+                                        My prior experience in <span className="highlight">AdTech</span> exposed me to analytics and bridging technical solutions with business needs.  
+                                    </p>
+                                    <p>
+                                        I’m passionate about designing <span className="highlight">human-centered software</span> and exploring how AI can enhance user experience in everyday digital tools.
+                                    </p>
                                 </p>
                             <div className="link">
                                 <HashLink to="#connect">
