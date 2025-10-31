@@ -40,16 +40,22 @@ function About() {
                                 </span>
                             ))}
                             </div>
-
-                            <p className="intro">
-                                During my MSc in Computer Science at the University of Bristol, I developed strong skills in programming, web development, and modern software tools. I developed an <span className="highlight">AI travel app</span> in collaboration with IBM and worked on a game project within a team that strengthened both my technical and collaborative abilities. I also took part in hackathons to broaden my problem-solving experience and apply my skills in real-world settings.
-                                <br /><br />
-                                Before moving into software engineering, I worked in the <span className="highlight">AdTech</span> industry, collaborating with designers and developers to deliver data-driven solutions that improved traffic, engagement, and advertising performance. This experience gave me a strong foundation in user behaviour, analytics, and scalable web technologies — bridging commercial understanding with engineering practice.
-                                <br /><br />
-                                I’m passionate about building products that connect technology with real-world impact, combining <span className="highlight">technical problem-solving</span> with <span className="highlight">creative and user-centred thinking</span>.
-                            </p>
-
-
+                                <p className="intro">
+                                    I’m a recent MSc Computer Science graduate with hands-on experience in 
+                                    <span className="highlight">full-stack development</span>, 
+                                    <span className="highlight">AI-integrated web applications</span>, and 
+                                    <span className="highlight">cloud services</span>.  
+                                    <br /><br />
+                                    Key projects include:
+                                    <ul>
+                                        <li>Developed a <span className="highlight">full-stack travel app</span> with IBM, using React Native, Node.js, and Watsonx AI, focusing on usability and iterative testing.</li>
+                                        <li>Built an <span className="highlight">AI Sentiment & Trend Dashboard</span> using AWS serverless tools and NLP APIs to generate instant audience insights.</li>
+                                        <li>Participated in hackathons and team-based projects to strengthen problem-solving, collaboration, and software engineering skills.</li>
+                                    </ul>
+                                    My prior experience in <span className="highlight">AdTech</span> exposed me to analytics and bridging technical solutions with business needs.  
+                                    <br /><br />
+                                    I’m passionate about designing <span className="highlight">human-centered software</span> and exploring how AI can enhance user experience in everyday digital tools.
+                                </p>
                             <div className="link">
                                 <HashLink to="#connect">
                                     <button className="connect" onClick={() => console.log('connect')}>Let&apos;s connect <ArrowRightCircle size={25} /></button>

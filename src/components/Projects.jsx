@@ -4,21 +4,62 @@ import personalweb from '../assets/img/personalweb.svg';
 import takeaimgif from '../assets/img/takeaim.gif';
 import takeaimGroup from '../assets/img/takeaimGroup.svg';
 import aitrash from '../assets/img/aitrash.svg';
+import aiSentiment from '../assets/img/aiSentiment.svg';
 
 const projects = [
   {
     id: 1,
+    title: "AI Sentiment Dashboard for Media & Entertainment",
+    date: "10/2025",
+    shortDescription:
+      "AI dashboard using AWS Bedrock LLMs and serverless architecture for audience sentiment analysis and actionable insights for the media industry.",
+    description: (
+      <>
+        <div className="project-description">
+        <p>
+        Built a scalable dashboard combining AI-driven sentiment analysis and serverless cloud architecture.
+        </p>
+        <div className="project-section">
+          <h4>Highlights:</h4> Delivered a scalable, low-latency system combining AI-driven sentiment analysis, serverless cloud architecture, and interactive data visualization.
+        <ul>
+          <li>Integrated AWS Bedrock LLMs for NLP-based sentiment analysis for video content</li>
+          <li>Serverless backend using AWS Lambda and Next.js API routes for low-latency processing</li>
+          {/*<li>Enabled live data streaming and updates via WebSocket communication.</li>*/}
+          <li>Deployed on AWS Amplify with automated CI/CD pipelines for continuous integration</li>
+          <li>Stored insights in DynamoDB and S3 for reliable data retrieval</li>
+          <li>Visualized sentiment trends interactively with Recharts components</li>
+        </ul>
+        </div>
+        <div className="project-section">
+        <h4>Technical Challenges & Solutions:</h4>
+        <ul>
+          <li><strong>Data consistency:</strong> Standardized JSON schemas to ensure seamless Lambda–frontend communication</li>
+          <li><strong>Performance bottlenecks:</strong> Reduced Bedrock API latency by splitting logic into concurrent Lambda functions</li>
+          <li><strong>IAM configuration:</strong> Implemented fine-grained IAM roles to securely connect Bedrock, DynamoDB and S3 services</li>
+          {/*<li><strong>Error handling:</strong> Added retry and error-boundary logic in Next.js API routes to ensure reliable backend calls.</li>*/}
+        </ul>
+        </div>
+        </div>
+      </>
+    ),
+    tech: ["AWS Bedrock", "LLM", "Next.js", "AWS Lambda", "DynamoDB", "S3", "Tailwind CSS", "Recharts", "CI/CD"],
+    images: [aiSentiment],
+    link: "https://github.com/ssweilee/ai-sentiment-dashboard",
+    type: "hero",
+  },
+  {
+    id: 2,
     title: "Full-Stack Personal Website - Project Showcasing",
     date: "",
     shortDescription:
-      "A personal portfolio website integrating front & back end features and deployment to showcase my technical skills.",
+      "Portfolio website demonstrating full-stack integration, interactive UI, and CI/CD deployment.",
     description: (
       <>
         <p>
-          A personal portfolio website designed to showcase technical skills and demonstrate frontend–backend integration.
+        Designed a personal portfolio website to showcase technical skills and end-to-end project integration.
         </p>
         <p>
-          <strong>Highlights:</strong> modular React components, weather API integration, light/dark toggle, environment
+          <strong>Highlights:</strong> Modular React components, weather API integration, light/dark toggle, environment
           configuration, CI/CD deployment.
         </p>
         <ul>
@@ -29,31 +70,30 @@ const projects = [
         </ul>
       </>
     ),
-    tech: ["React.js", "Node.js", "Express", "CSS", "RESTful API", "CI/CD"],
+    tech: ["React.js", "Node.js", "Express", "RESTful API", "CI/CD", "CSS"],
     images: [personalweb],
     link: "https://github.com/ssweilee/Personal-Website",
     type: "hero",
   },
   {
-    id: 2,
+    id: 3,
     title: "AI Travel App – Personalised Itinerary Planner",
     collaboration: "IBM x University of Bristol",
     date: "05/2025 – 09/2025",
-    shortDescription: "Cross-platform AI travel app that generates personalised itineraries and integrates social features, developed in collaboration with IBM and the University of Bristol.",
+    shortDescription: "AI-powered mobile app providing personalised travel recommendations and social sharing features, developed in collaboration with IBM and the University of Bristol.",
     description: (
       <>
       <p>
-        An AI-powered mobile app enabling users to receive personalised travel recommendations and share experiences with other travellers. Developed as part of an academic–industry collaboration project in a group of 8.
+        Developed a cross-platform app enabling users to receive travel recommendations and share experiences with others.
       </p>
       <p>
-        <strong>Highlights:</strong> Recommendation system integrated with social platform alongside an AI assistant using IBM Watsonx.
-
+        <strong>Highlights:</strong> Recommendation system integrated with social platform; team collaborated on AI assistant integration using IBM Watsonx.
       </p>
       <ul>
         <li>Planned and coordinated team workflow using Git-based Agile methodology</li>
+        <li>Built backend APIs with Node.js & Express for user profile and itinerary management</li>
+        <li>Integrated location APIs and social features for enhanced user engagement</li>
         <li>Implemented profile picture upload & management across multiple app sections</li>
-        <li>Built Profile Editing page with backend integration</li>
-        <li>Integrated location APIs to enhance user experience</li>
       </ul>
     </>
     ),
@@ -63,11 +103,11 @@ const projects = [
     type: "hero",
   },
   {
-    id: 3,
+    id: 4,
     title: "Take Aim – Arcade style Shooting Game",
     date: "01/2025 – 05/2025",
     shortDescription:
-    "Arcade-style web game blending nostalgic aesthetics with simple target-shooting mechanics, developed as a semester-long team project.",
+      "Web-based arcade shooting game with interactive UI and iterative gameplay design, developed as a semester-long team project.",
     description: (
     <>
       <p>
@@ -88,15 +128,15 @@ const projects = [
     type: "grid",
   },
   {
-    id: 4,
+    id: 5,
     title: "Trash Classifier",
     date: "02/2025",
     shortDescription:
-    "Cross-platform mobile app built at BrisHack 2025 to promote sustainable habits by classifying and sorting trash using AI.",
+      "Cross-platform mobile app that identifies and sorts waste to promote sustainable habits, built at BrisHack 2025.",
     description: (
       <>
         <p>
-          Developed an AI-powered mobile app within 24 hours at BrisHack 2025 in Bristol. The app helps users identify and sort waste correctly, encouraging sustainable everyday habits.
+          Developed an AI-powered mobile app in 24 hours during a hackathonto promote sustainable daily habits.
         </p>
         <p>
           <strong>Highlights:</strong> cross-platform development, rapid prototyping,
@@ -106,7 +146,8 @@ const projects = [
         <ul>
           <li>Built a cross-platform app using Flutter and Dart within 24 hours</li>
           <li>Implemented multi-page UI, interactive image carousel, and informative pages</li>
-          <li>Collaborated in a hackathon team environment with Git-based version control</li>
+          <li>Collaborated in a hackathon team using Git version control</li>
+          <li>Optimized performance under rapid prototyping constraints</li>
         </ul>
       </>
     ),
