@@ -225,10 +225,11 @@ function Hero() {
             />
          </div>
          <h1 className="hero-headline">
-            Think like a problem-solver, build like an engineer.
+            Building user-centred, full-stack, and AI-powered applications.
          </h1>
          <p className="hero-tagline">
-            I build <span className="highlight">full-stack</span> applications and design <span className="highlight">user-centred</span> solutions — bridging software engineering with <span className="highlight">AdTech</span> expertise.
+            I’m a Software Engineer with hands-on experience in <span className="highlight">full-stack development</span>, <span className="highlight">AI-powered applications</span>, and <span className="highlight">cloud tools</span>. <br />
+            I create <span className="highlight">user-centered</span> applications, combining problem-solving with practical engineering skills.
          </p>
 
          <div className="hero-cta">
