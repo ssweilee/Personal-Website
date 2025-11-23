@@ -184,9 +184,11 @@ function Skills () {
                                     ))}
                                 </div>
                             </div>
+                            {/* 
                         <div className="resume-link-wrapper">
                             <p className="resume-link">Checkout more on my <a href={links.resume} target="_blank" rel="noopener noreferrer">CV</a></p>
                         </div>
+                        */}
                     </div>
                 )}
                 </TrackVisibility>

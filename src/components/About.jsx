@@ -28,7 +28,7 @@ function About() {
                         <Col xs={12} className="about-content">
                             <div className="name-location">
                                 <h1>Hi! I&apos;m Sandy</h1>
-                                <p className="location">📍 Bristol, UK</p>
+                                {/*<p className="location">📍 Bristol, UK</p>*/}
                             </div>
                             <div className="about-tags rotating-tags">
                             {tags.map((tag, index) => (
