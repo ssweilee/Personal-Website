@@ -76,11 +76,13 @@ function NavBar() {
         <Nav.Link as={HashLink} smooth to="#projects" onClick={() => handleNavClick('projects')} className={activeLink==='projects' ? 'active navbar-link':'navbar-link'}>Projects</Nav.Link>
         </Nav>
         <div className="navbar-tools">
+          {/* 
           <Weather />
+          */}
           <div className="switch">
               <ReactSwitch className="custom-switch" onChange={toggleTheme} checked={theme === "dark"} uncheckedIcon={<FontAwesomeIcon className="moon-icon" icon={faMoon} />} checkedIcon={<FontAwesomeIcon className="sun-icon" icon={faSun} />} />
-            </div>
           </div>
+        </div>
       </Navbar.Collapse>
       <div className="non-mobile-navbar-text">
         <span className='navbar-text'>
